@@ -224,6 +224,20 @@ let g:tagbar_type_cpp = {
 " F2 open .cpp or .h file in split window
 nnoremap <silent> <F2> :AV<CR>
 
+" Define file mapping
+let g:alternateExtensions_h = "c,cpp,cxx,cc"
+let g:alternateExtensions_hh = "c,cpp,cxx,cc"
+let g:alternateExtensions_c = "h,hh"
+let g:alternateExtensions_cc = "h,hh"
+let g:alternateExtensions_cpp = "h,hh"
+let g:alternateExtensions_cxx = "h,hh"
+
+let g:alternateExtensions_H = "C,CPP,CXX,CC"
+let g:alternateExtensions_HH = "C,CPP,CXX,CC"
+let g:alternateExtensions_C = "H,HH"
+let g:alternateExtensions_CC = "H,HH"
+let g:alternateExtensions_CPP = "H,HH"
+let g:alternateExtensions_CXX = "H,HH"
 
 
 " ----- kien/ctrlp.vim -----
