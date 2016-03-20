@@ -185,7 +185,7 @@ let g:alternateExtensions_CXX = "H,HH"
 "https://github.com/kien/ctrlp.vim
 
 " Default mapping and the default command to invoke CtrlP
-let g:ctrlp_map = '<c-f>'
+let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " When invoked without an explicit starting directory,CtrlP won't set its local working directory
@@ -196,6 +196,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" Set the limit of the heigh
+let g:ctrlp_max_height = 20
 
 
 
@@ -225,6 +228,35 @@ augroup END
 "https://github.com/mileszs/ack.vim
 "https://github.com/dyng/ctrlsf.vim
 
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+
+
+" ----- terryma/vim-multiple-cursors -----
+"https://github.com/terryma/vim-multiple-cursors
+
+
+
+" ----- tpope/vim-surround -----
+"https://github.com/tpope/vim-surround
+
+
+
+
+" ----- EasyMotion -----
+"https://github.com/vim-scripts/EasyMotion
+
+
+
+" ----- ervandew/supertab -----
+"https://github.com/ervandew/supertab
 
 
 

@@ -45,6 +45,21 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'dyng/ctrlsf.vim'
 
+" True sublime test style multiple selections for vim
+Plugin 'terryma/vim-multiple-cursors'
+
+" The plugin provides mapping to easily delete, changeand add surroundings in pairs
+Plugin 'tpope/vim-surround'
+
+" EasyMotion provides a much simpler way to use some motions in vim
+Plugin 'EasyMotion'
+
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
+Plugin 'ervandew/supertab'
+
+
+
+
 call vundle#end()
 
 filetype plugin indent on

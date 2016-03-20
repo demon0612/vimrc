@@ -29,7 +29,7 @@ map <S-H> gT
 " go to next tab
 map <S-L> gt
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
   set stal=2
