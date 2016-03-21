@@ -260,28 +260,71 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 
 
+" ----- SirVer/ultisnips -----
+"https://github.com/SirVer/ultisnips
+"https://github.com/honza/vim-snippets
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<Tab>"
+"let g:UltiSnipsJumpForwardTrigger = '<C-b>'
+"let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+"let g:ULtiSnipsUsePythonVersion = 2
 
 
 
+" ----- wincent/command-t -----
+"https://github.com/wincent/command-t
 
 
 
+" ----- vim-fugitive -----
+"https://github.com/tpope/vim-fugitive
+"https://github.com/airblade/vim-gitgutter
 
 
 
+" ----- YankRing -----
+"https://github.com/vim-scripts/YankRing.vim
 
 
 
+" ----- MRU ------
+"https://github.com/vim-scripts/mru.vim
 
 
 
+" ----- L9 -----
+"https://github.com/vim-scripts/L9
 
 
 
+" ----- jlanzarotta/bufexplorer -----
+"https://github.com/jlanzarotta/bufexplorer
 
 
 
+" ----- junegunn/goyo -----
+"https://github.com/junegunn/goyo.vim
 
+
+
+" ----- morhetz/gruvbox -----
+"https://github.com/morhetz/gruvbox
+
+
+
+" ----- tpope/vim-commentary -----
+"https://github.com/tpope/vim-commentary
+
+
+
+" ----- plasticboy/vim-markdown -----
+"https://github.com/plasticboy/vim-markdown
+
+
+
+" ----- terryma/vim-expand-region -----
+"https://github.com/terryma/vim-expand-region
 
 
 

@@ -1,5 +1,4 @@
 filetype off
-syntax on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,7 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 " Syntastic is a syntax checking plugin for Vim
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 " Automated tag generatiron 
 Plugin 'xolox/vim-misc'     
@@ -57,11 +56,51 @@ Plugin 'EasyMotion'
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
 Plugin 'ervandew/supertab'
 
+" UltiSnips is the ultimate solution for snippets in Vim
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
 
+" Command-T is a Vim plug-in that provides an extremely fast mechanism with a minimal number of keystrokes
+"Plugin 'wincent/command-t'
+
+" Work with git in Vim
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
+
+" Maintains a histroy of previous yanks,changes and deletes
+"Plugin 'YankRing.vim'
+
+" The most recently used plugin provides an easy access to recenly opened/edited files in Vim
+"Plugin 'mru.vim'
+
+
+" L9 is a Vim-script library, which provides some utility functions and commands for Vim
+"Plugin 'L9'
+
+" bufexplorer can quickly and easily switch between buffers
+"Plugin 'jlanzarotta/bufexplorer'
+
+" Distraction-free writing in Vim
+"Plugin 'junegunn/goyo.vim'
+
+" Retro groove color scheme for Vim
+"Plugin 'morhetz/gruvbox'
+
+" vim-commentary
+"Plugin 'tpope/vim-commentary'
+
+" Syntax highlighting matching rules and mappings for the original Markdown and extensions
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
+
+" It allows to visually select increasingly larger regions of text using the same key combination
+"Plugin 'terryma/vim-expand-region'
+
+" A code-completion engine for Vim
+"Plugin 'Valloric/YouCompleteMe'
 
 
 call vundle#end()
 
 filetype plugin indent on
-
 
