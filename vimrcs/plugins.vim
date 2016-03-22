@@ -7,8 +7,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " colorscheme
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+Plugin 'flazz/vim-colorschemes'
 
 " Lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
@@ -19,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 " Syntastic is a syntax checking plugin for Vim
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Automated tag generatiron 
 Plugin 'xolox/vim-misc'     
@@ -38,23 +37,23 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'           
 
 " Vim plugin for intensely orgasmic commenting
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
 
 " A ack/ag powered code serach and view tool
-Plugin 'mileszs/ack.vim'
-Plugin 'dyng/ctrlsf.vim'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'dyng/ctrlsf.vim'
 
 " True sublime test style multiple selections for vim
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
 " The plugin provides mapping to easily delete, changeand add surroundings in pairs
-Plugin 'tpope/vim-surround'
+"Plugin 'tpope/vim-surround'
 
 " EasyMotion provides a much simpler way to use some motions in vim
-Plugin 'EasyMotion'
+"Plugin 'EasyMotion'
 
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
 
 " UltiSnips is the ultimate solution for snippets in Vim
 "Plugin 'SirVer/ultisnips'
@@ -82,9 +81,6 @@ Plugin 'ervandew/supertab'
 
 " Distraction-free writing in Vim
 "Plugin 'junegunn/goyo.vim'
-
-" Retro groove color scheme for Vim
-"Plugin 'morhetz/gruvbox'
 
 " vim-commentary
 "Plugin 'tpope/vim-commentary'

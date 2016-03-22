@@ -1,5 +1,5 @@
 " highlight enable
-syntax enable
+"syntax enable
 syntax on
 
 " Close the VI Compatible

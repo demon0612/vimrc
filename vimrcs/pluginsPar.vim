@@ -1,49 +1,30 @@
-" ----- altercation/vim-colors-solarized -----
-" https://github.com/altercation/solarized
+" ----- flazz/vim-colorschemes -----
+"https://github.com/flazz/vim-colorschemes
 
-"colorscheme solarized
-
-"if the command above is not work,uncomment the next line
-"let g:solarized_termcolors=256
-
-
-
-" ----- tomasr/molokai -----
-" https://github.com/tomasr/molokai
-
-let g:molokai_original=1
-
-"if the command above is not work,uncomment the next line
-"let g:rehash256=1
+colorscheme gruvbox 
 
 
 
 " ----- bling/vim-airline -----
 " https://github.com/vim-airline/vim-airline
-" ----- vim-airline/vim-airline-themes
 " https:://github.com/vim-airline/vim-airline-themes
 
-" Show PASTE if in paste mode
-let g:airline_detect_paste=1
+"let g:airline_theme="luna"
 
-" Show airline for tabs too
+let g:airline_powerline_fonts = 1 
+
+" Show airline for tabs buffers too
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
-let g:airline_theme="molokai"
-
-"let g:airline_left_sep=''
-"let g:airline_right_sep=''
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 " ----- scrooloose/nerdtree -----
 " https://github.com/scrooloose/nerdtree
-" ----- jistr/nerdtree-tabs -----
 " https://github.com/jistr/vim-nerdtree-tabs
 
 " Open/close NERDTree Tabs with F3
-map <silent> <F3> :NERDTreeTabsToggle<CR>
+map <F3> :NERDTreeTabsToggle<CR>
 " Auto close VIM when only nerdtree is left
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
 
@@ -84,10 +65,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = '✘'
 let g:syntastic_warning_symbol = "▲"
 
-"augroup mySyntastic
-"  au!
-"  au FileType tex let b:syntastic_mode = "passive"
-"augroup END
+"let g:syntastic_cpp_include_dirs=['/usr/local/include/Geant4/']
+"let g:syntastic_cpp_compiler= 'clang++'
+"let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
 
 
 
@@ -97,7 +77,6 @@ let g:syntastic_warning_symbol = "▲"
 
 let g:easytags_cmd = '/usr/bin/ctags'
 
-"let g:easytags_file = '~/.vim/tags'
 set tags=./tags;
 let g:easytags_dynamic_files = 1
 
@@ -187,6 +166,7 @@ let g:alternateExtensions_CXX = "H,HH"
 " Default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<C-P>'
 let g:ctrlp_cmd = 'CtrlP'
+map <C-f> :CtrlPMRU<CR>
 
 " When invoked without an explicit starting directory,CtrlP won't set its local working directory
 let g:ctrlp_working_path_mode =''
@@ -198,7 +178,13 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Set the limit of the heigh
-let g:ctrlp_max_height = 20
+let g:ctrlp_max_height = 15
+
+let g:ctrlp_match_window_reversed=0
+
+let g:ctrlp_mruf_max=500
+
+let g:ctrlp_follow_symlinks=1
 
 
 
@@ -305,11 +291,6 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " ----- junegunn/goyo -----
 "https://github.com/junegunn/goyo.vim
-
-
-
-" ----- morhetz/gruvbox -----
-"https://github.com/morhetz/gruvbox
 
 
 
