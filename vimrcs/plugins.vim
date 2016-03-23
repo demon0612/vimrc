@@ -37,17 +37,17 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'           
 
 " Vim plugin for intensely orgasmic commenting
-"Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " A ack/ag powered code serach and view tool
-"Plugin 'mileszs/ack.vim'
-"Plugin 'dyng/ctrlsf.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'dyng/ctrlsf.vim'
 
 " True sublime test style multiple selections for vim
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
 " The plugin provides mapping to easily delete, changeand add surroundings in pairs
-"Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 
 " EasyMotion provides a much simpler way to use some motions in vim
 "Plugin 'EasyMotion'
@@ -56,11 +56,8 @@ Plugin 'Raimondi/delimitMate'
 "Plugin 'ervandew/supertab'
 
 " UltiSnips is the ultimate solution for snippets in Vim
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
-
-" Command-T is a Vim plug-in that provides an extremely fast mechanism with a minimal number of keystrokes
-"Plugin 'wincent/command-t'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Work with git in Vim
 "Plugin 'tpope/vim-fugitive'
@@ -68,13 +65,6 @@ Plugin 'Raimondi/delimitMate'
 
 " Maintains a histroy of previous yanks,changes and deletes
 "Plugin 'YankRing.vim'
-
-" The most recently used plugin provides an easy access to recenly opened/edited files in Vim
-"Plugin 'mru.vim'
-
-
-" L9 is a Vim-script library, which provides some utility functions and commands for Vim
-"Plugin 'L9'
 
 " bufexplorer can quickly and easily switch between buffers
 "Plugin 'jlanzarotta/bufexplorer'
@@ -94,6 +84,12 @@ Plugin 'Raimondi/delimitMate'
 
 " A code-completion engine for Vim
 "Plugin 'Valloric/YouCompleteMe'
+
+"additional vim c++ syntax highlighting
+"Plugin 'octol/vim-cpp-enhanced-highlight'
+
+"provide easy code formatting in vim
+"Plugin 'Chiel92/vim-autoformat'
 
 
 call vundle#end()

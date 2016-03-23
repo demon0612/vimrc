@@ -1,7 +1,8 @@
 " ----- flazz/vim-colorschemes -----
 "https://github.com/flazz/vim-colorschemes
 
-colorscheme gruvbox 
+colorscheme gruvbox
+"colorscheme molokai
 
 
 
@@ -164,9 +165,9 @@ let g:alternateExtensions_CXX = "H,HH"
 "https://github.com/kien/ctrlp.vim
 
 " Default mapping and the default command to invoke CtrlP
-let g:ctrlp_map = '<C-P>'
+let g:ctrlp_map = '<C-O>'
 let g:ctrlp_cmd = 'CtrlP'
-map <C-f> :CtrlPMRU<CR>
+map <C-M> :CtrlPMRU<CR> 
 
 " When invoked without an explicit starting directory,CtrlP won't set its local working directory
 let g:ctrlp_working_path_mode =''
@@ -190,6 +191,8 @@ let g:ctrlp_follow_symlinks=1
 
 " ----- Raimondi/delimitMate settings -----
 "https://github.com/Raimondi/delimitMate
+
+"using <S-T> to jump out
 
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
@@ -228,21 +231,39 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " ----- terryma/vim-multiple-cursors -----
 "https://github.com/terryma/vim-multiple-cursors
 
+" Turn of the default mapping 
+let g:multi_cursor_use_default_mapping=0
+
+" Set the mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
 
 
 " ----- tpope/vim-surround -----
 "https://github.com/tpope/vim-surround
-
+"cs ds ys
 
 
 
 " ----- EasyMotion -----
 "https://github.com/vim-scripts/EasyMotion
-
+"let g:EasyMotion_leader_key = '<Leader>'
+"let g:EasyMotion_smartcase = 1
+"map f <Plug>(easymotion-prefix)
+"map ff <Plug>(easymotion-s)
+"map fs <Plug>(easymotion-f)
+"map fl <Plug>(easymotion-lineforward)
+"map fj <Plug>(easymotion-j)
+"map fk <Plug>(easymotion-k)
+"map fh <Plug>(easymotion-linebackward)
 
 
 " ----- ervandew/supertab -----
 "https://github.com/ervandew/supertab
+"c-p c-n
 
 
 
@@ -251,15 +272,10 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 "https://github.com/honza/vim-snippets
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<Tab>"
-"let g:UltiSnipsJumpForwardTrigger = '<C-b>'
-"let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-"let g:ULtiSnipsUsePythonVersion = 2
-
-
-
-" ----- wincent/command-t -----
-"https://github.com/wincent/command-t
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+let g:ULtiSnipsUsePythonVersion = 2
 
 
 
@@ -271,16 +287,6 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " ----- YankRing -----
 "https://github.com/vim-scripts/YankRing.vim
-
-
-
-" ----- MRU ------
-"https://github.com/vim-scripts/mru.vim
-
-
-
-" ----- L9 -----
-"https://github.com/vim-scripts/L9
 
 
 
@@ -308,6 +314,17 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 "https://github.com/terryma/vim-expand-region
 
 
+
+" ----- octol/vim-cpp-enhanced-highlight -----
+"https://github.com/octol/vim-cpp-enhanced-highlight
+
+"let g:cpp_class_scope_highlight = 1
+"let g:cpp_experimental_template_highlight = 1
+
+
+
+" ----- Plugin Chiel92/vim-autoformat -----
+"https://github.com/Chiel92/vim-autoformat
 
 " ----- Valloric/YouCompleteMe -----
 "  https//github.com/Valloric/YouCompleteMe

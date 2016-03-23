@@ -29,6 +29,11 @@ map <S-H> gT
 " go to next tab
 map <S-L> gt
 
+" go to prev buffer
+map <S-J> bp
+" go to next buffer
+map <S-K> bn
+
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab

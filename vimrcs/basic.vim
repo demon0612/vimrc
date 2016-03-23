@@ -128,7 +128,7 @@ set laststatus=2
 
 
 " Yank to the system register (*) by default
-set clipboard=+unnamed	
+set clipboard+=unnamed	
 
 " Show current mode
 set showmode		
