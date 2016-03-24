@@ -62,13 +62,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_highlighting = 0
+let g:systastic_loc_list_height = 2
 
 let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
+let g:syntastic_warning_symbol = "▲⚠"
 
-"let g:syntastic_cpp_include_dirs=['/usr/local/include/Geant4/']
-"let g:syntastic_cpp_compiler= 'clang++'
-"let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_remove_include_errors = 1
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+"let g:syntastic_enable_balloons = 1 "whether to show balloons"
 
 
 
@@ -282,6 +286,8 @@ let g:ULtiSnipsUsePythonVersion = 2
 " ----- vim-fugitive -----
 "https://github.com/tpope/vim-fugitive
 "https://github.com/airblade/vim-gitgutter
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_max_signs = 500
 
 
 

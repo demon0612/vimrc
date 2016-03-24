@@ -123,10 +123,9 @@ set background=dark
 " Always show statusbar
 set laststatus=2
 
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-
+" Change the updatetime
+set updatetime=250
+ 
 " Yank to the system register (*) by default
 set clipboard+=unnamed	
 

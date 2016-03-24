@@ -18,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 " Syntastic is a syntax checking plugin for Vim
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 " Automated tag generatiron 
 Plugin 'xolox/vim-misc'     
@@ -60,8 +60,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " Work with git in Vim
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 
 " Maintains a histroy of previous yanks,changes and deletes
 "Plugin 'YankRing.vim'
