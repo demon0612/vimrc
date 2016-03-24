@@ -15,23 +15,23 @@ then
 fi
 
 
-#checkVi=`vim --version|grep +python`
-#if [ "x$checkVi" == "x" ]
-#then
-    #echo "Vim is not complied with python, please rebuild it before install"
-    #exit
-#fi
+checkVi=`vim --version|grep +python`
+if [ "x$checkVi" == "x" ]
+then
+    echo "Vim is not complied with python, please rebuild it before install"
+    exit
+fi
 
-#git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#cd ~/.vim/
-#https://github.com/powerline/fonts
-#cd fonts
-#./install.sh
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cd ~/.vim/
+https://github.com/powerline/fonts
+cd fonts
+./install.sh
 
-#vim +PluginInstall +qall
+vim +PluginInstall +qall
 
-#cd ~/.vim/bundle/YouCompleteMe
-#./install.sh --clang-completer --system-libclang
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer --system-libclang
 
-#mkdir -p ~/.vim/temps
+mkdir -p ~/.vim/temps
 
