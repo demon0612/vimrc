@@ -64,7 +64,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
 " Maintains a histroy of previous yanks,changes and deletes
-"Plugin 'YankRing.vim'
+Plugin 'YankRing.vim'
 
 " bufexplorer can quickly and easily switch between buffers
 "Plugin 'jlanzarotta/bufexplorer'

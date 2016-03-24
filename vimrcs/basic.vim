@@ -72,7 +72,7 @@ set matchtime=2
 set hidden
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+"set foldcolumn=1
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -161,8 +161,14 @@ set tm=500
 
 " Turn on persistent undo  
 try
-    set undodir=~/.vim/tempDirs/undo
+    set undodir=~/.vim/temps/
     set undofile
 catch
 endtry
 
+" Specify the behavior when switching between buffers
+try
+  "set switchbuf=useopen,usetab,newtab
+  set showtabline=2
+catch
+endtry

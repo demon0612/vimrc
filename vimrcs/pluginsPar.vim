@@ -293,6 +293,10 @@ let g:gitgutter_max_signs = 500
 
 " ----- YankRing -----
 "https://github.com/vim-scripts/YankRing.vim
+let g:yankring_history_dir = '~/.vim/temps'
+let g:yankring_max_history = 500
+let g:yankring_persist = 1
+nnoremap <silent> <F11> :YRShow<CR>
 
 
 
