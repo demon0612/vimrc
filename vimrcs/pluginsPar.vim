@@ -51,28 +51,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 
 
-" ----- scrooloose/syntastic settings -----
-" https://github.com/scrooloose/syntastic
-
-" Recommended settings from github
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_highlighting = 0
-let g:systastic_loc_list_height = 2
-
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲⚠"
-
-let g:syntastic_cpp_remove_include_errors = 1
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
-"let g:syntastic_enable_balloons = 1 "whether to show balloons"
 
 
 
@@ -252,6 +230,145 @@ let g:multi_cursor_quit_key='<Esc>'
 
 
 
+
+
+" ----- SirVer/ultisnips -----
+"https://github.com/SirVer/ultisnips
+"https://github.com/honza/vim-snippets
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+let g:ULtiSnipsUsePythonVersion = 2
+let g:UltiSnipsListSnippets='<C-e>'
+
+
+
+" ----- vim-fugitive -----
+"https://github.com/tpope/vim-fugitive
+"https://github.com/airblade/vim-gitgutter
+
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_max_signs = 500
+
+
+
+" ----- YankRing -----
+"https://github.com/vim-scripts/YankRing.vim
+
+let g:yankring_history_dir = '~/.vim/temps'
+let g:yankring_max_history = 500
+let g:yankring_persist = 1
+nnoremap <silent> <F11> :YRShow<CR>
+
+
+
+" ----- jlanzarotta/bufexplorer -----
+"https://github.com/jlanzarotta/bufexplorer
+
+" be:normal open    bt:toggle open/close    bs:force horizontal split   bv:force vertical split
+
+nnoremap <silent> <F10> :BufExplorer<CR>
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerSplitRight=0        " Split left.
+let g:bufExplorerSplitVertical=1     " Split vertically.
+let g:bufExplorerSplitVertSize = 30  " Split width
+let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+"autocmd BufWinEnter \[Buf\ List\] setl nonumber "
+
+
+
+" ----- godlygeek/tabular -----
+"https://github.com/godlygeek/tabular
+" :Tab aim-character
+
+
+
+" ----- plasticboy/vim-markdown -----
+"https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+
+
+" ----- octol/vim-cpp-enhanced-highlight -----
+"https://github.com/octol/vim-cpp-enhanced-highlight
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
+
+
+" ----- Plugin Chiel92/vim-autoformat -----
+"https://github.com/Chiel92/vim-autoformat
+
+noremap <silent> <F7> :Autoformat<CR>
+
+let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
+let g:formatters_c = ['my_custom_c']
+
+let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %> /dev/null 2>&1"'
+let g:formatters_cpp = ['my_custom_cpp']
+
+let g:formatdef_my_custom_perl='"astyle --style=gnu --sufiix=none %"'
+let g:formatters_perl = ['my_custom_perl']
+
+let g:formatdef_my_custom_py='"autopep8 -i --aggressive %"'
+let g:formatters_py = ['my_custom_py']
+
+let g:formatdef_my_custom_java='"astyle --style=java --sufiix=none %"'
+let g:formatters_java = ['my_custom_java']
+
+let g:formatdef_my_custom_jsp='"astyle --style=gnu --sufiix=none %"'
+let g:formatters_jsp = ['my_custom_jsp']
+
+let g:formatdef_my_custom_xml='"astyle --style=gnu --sufiix=none %"'
+let g:formatters_xml = ['my_custom_xml']
+
+
+
+" ----- Valloric/YouCompleteMe -----
+"  https//github.com/Valloric/YouCompleteMe
+let g:ycm_error_symbol='✘'
+let g:ycm_warning_symbol='▲'
+
+let g:ycm_path_to_python_interpreter='python'
+
+nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>  
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>  
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+let g:ycm_confirm_extra_conf=0  
+let g:ycm_collect_identifiers_from_tags_files = 1  
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_min_num_of_chars_for_completion=2
+let g:ycm_cache_omnifunc=0  
+let g:ycm_seed_identifiers_with_syntax = 1  
+let g:ycm_complete_in_comments=1  
+let g:ycm_complete_in_strings=1  
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'nerdtree' : 1,
+      \}
+
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
+
+let g:ycm_use_ultisnips_completer=1
+
+"set completeopt-=preview
+
+" Menu color
+"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+
+" Collected item color
+"highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+
+
+
 " ----- EasyMotion -----
 "https://github.com/vim-scripts/EasyMotion
 "let g:EasyMotion_leader_key = '<Leader>'
@@ -265,111 +382,26 @@ let g:multi_cursor_quit_key='<Esc>'
 "map fh <Plug>(easymotion-linebackward)
 
 
-" ----- ervandew/supertab -----
-"https://github.com/ervandew/supertab
-"c-p c-n
+" ----- scrooloose/syntastic settings -----
+" https://github.com/scrooloose/syntastic
 
+" Recommended settings from github
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_enable_highlighting = 0
+"let g:systastic_loc_list_height = 2
 
+"let g:syntastic_error_symbol = '✘'
+"let g:syntastic_error_symbol = '✘'
+"let g:syntastic_warning_symbol = "▲⚠"
 
-" ----- SirVer/ultisnips -----
-"https://github.com/SirVer/ultisnips
-"https://github.com/honza/vim-snippets
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
-let g:ULtiSnipsUsePythonVersion = 2
-
-
-
-" ----- vim-fugitive -----
-"https://github.com/tpope/vim-fugitive
-"https://github.com/airblade/vim-gitgutter
-let g:gitgutter_sign_column_always = 1
-let g:gitgutter_max_signs = 500
-
-
-
-" ----- YankRing -----
-"https://github.com/vim-scripts/YankRing.vim
-let g:yankring_history_dir = '~/.vim/temps'
-let g:yankring_max_history = 500
-let g:yankring_persist = 1
-nnoremap <silent> <F11> :YRShow<CR>
-
-
-
-" ----- jlanzarotta/bufexplorer -----
-"https://github.com/jlanzarotta/bufexplorer
-
-
-
-" ----- junegunn/goyo -----
-"https://github.com/junegunn/goyo.vim
-
-
-
-" ----- tpope/vim-commentary -----
-"https://github.com/tpope/vim-commentary
-
-
-
-" ----- plasticboy/vim-markdown -----
-"https://github.com/plasticboy/vim-markdown
-
-
-
-" ----- terryma/vim-expand-region -----
-"https://github.com/terryma/vim-expand-region
-
-
-
-" ----- octol/vim-cpp-enhanced-highlight -----
-"https://github.com/octol/vim-cpp-enhanced-highlight
-
-"let g:cpp_class_scope_highlight = 1
-"let g:cpp_experimental_template_highlight = 1
-
-
-
-" ----- Plugin Chiel92/vim-autoformat -----
-"https://github.com/Chiel92/vim-autoformat
-
-" ----- Valloric/YouCompleteMe -----
-"  https//github.com/Valloric/YouCompleteMe
-
-" Menu color
-"highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
-
-" Collected item color
-"highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
-
-" 补全功能在注释中同样有效
-"let g:ycm_complete_in_comments=1
-
-" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-"let g:ycm_confirm_extra_conf=0
-
-" 开启 YCM 标签补全引擎
-"let g:ycm_collect_identifiers_from_tags_files=0
-
-"" 引入 C++ 标准库 tags
-"set tags+=/data/misc/software/app/vim/stdcpp.tags
-"set tags+=/data/misc/software/app/vim/sys.tags
-
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-"inoremap <leader>; <C-x><C-o>
-
-" 补全内容不以分割子窗口形式出现，只显示补全列表
-"set completeopt-=preview
-
-" 从第一个键入字符就开始罗列匹配项
-"let g:ycm_min_num_of_chars_for_completion=1
-
-" 禁止缓存匹配项，每次都重新生成匹配项
-"let g:ycm_cache_omnifunc=0
-
-" 语法关键字补全
-"let g:ycm_seed_identifiers_with_syntax=1
-
+"let g:syntastic_cpp_remove_include_errors = 1
+"let g:syntastic_cpp_check_header = 1
+"let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
+""let g:syntastic_enable_balloons = 1 "whether to show balloons"

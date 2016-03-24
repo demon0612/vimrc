@@ -17,9 +17,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'	
 Plugin 'jistr/vim-nerdtree-tabs'
 
-" Syntastic is a syntax checking plugin for Vim
-"Plugin 'scrooloose/syntastic'
-
 " Automated tag generatiron 
 Plugin 'xolox/vim-misc'     
 Plugin 'xolox/vim-easytags'
@@ -49,12 +46,6 @@ Plugin 'terryma/vim-multiple-cursors'
 " The plugin provides mapping to easily delete, changeand add surroundings in pairs
 Plugin 'tpope/vim-surround'
 
-" EasyMotion provides a much simpler way to use some motions in vim
-"Plugin 'EasyMotion'
-
-" Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
-"Plugin 'ervandew/supertab'
-
 " UltiSnips is the ultimate solution for snippets in Vim
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -67,30 +58,28 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'YankRing.vim'
 
 " bufexplorer can quickly and easily switch between buffers
-"Plugin 'jlanzarotta/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 
-" Distraction-free writing in Vim
-"Plugin 'junegunn/goyo.vim'
-
-" vim-commentary
-"Plugin 'tpope/vim-commentary'
+" Vim script for text filtering and alignment
+Plugin 'godlygeek/tabular'
 
 " Syntax highlighting matching rules and mappings for the original Markdown and extensions
-"Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
-
-" It allows to visually select increasingly larger regions of text using the same key combination
-"Plugin 'terryma/vim-expand-region'
-
-" A code-completion engine for Vim
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'plasticboy/vim-markdown'
 
 "additional vim c++ syntax highlighting
-"Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 
 "provide easy code formatting in vim
-"Plugin 'Chiel92/vim-autoformat'
+Plugin 'Chiel92/vim-autoformat'
 
+" A code-completion engine for Vim
+Plugin 'Valloric/YouCompleteMe'
+
+" EasyMotion provides a much simpler way to use some motions in vim
+"Plugin 'EasyMotion'
+ 
+" Syntastic is a syntax checking plugin for Vim
+"Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
