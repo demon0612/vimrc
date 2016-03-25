@@ -33,5 +33,4 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer --system-libclang
 
-mkdir -p ~/.vim/temps
-
+echo "All configure down!! Enjoy!!  :)"
