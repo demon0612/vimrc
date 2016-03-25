@@ -20,6 +20,7 @@ Plugin 'gmarik/Vundle.vim'
 " colorscheme
 Plugin 'flazz/vim-colorschemes'
 
+" Set color scheme
 try
     colorscheme gruvbox
     "colorscheme molokai
@@ -40,8 +41,10 @@ Plugin 'vim-airline/vim-airline-themes'
 
 let g:airline_powerline_fonts = 1 
 
-" Show airline for tabs buffers too
+" Show airline for different tabs 
 let g:airline#extensions#tabline#enabled = 1
+
+" Show airline for different buffers
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 
@@ -57,15 +60,18 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " Open/close NERDTree Tabs with F3
 map <F3> :NERDTreeTabsToggle<CR>
 
-" Auto close VIM when only nerdtree is left
+" Auto open nerdtree if no file is edited when vim start up
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
 
 " Set Tree Symbol
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+" Nerdtree ignore file type
 let NERDTreeIgnore = ['\.pyc$','__pycache__',' CVS',' .git','.DS_Store','\.swp$','\.swo$']
+" Don't show hidden file in nerdtree
 let NERDTreeShowHidden = 0
+
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_open_on_console_startup = 0
 let g:nerdtree_tabs_no_startup_for_diff = 1
