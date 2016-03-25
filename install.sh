@@ -24,7 +24,7 @@ fi
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cd ~/.vim/
-https://github.com/powerline/fonts
+git clone https://github.com/powerline/fonts
 cd fonts
 ./install.sh
 
