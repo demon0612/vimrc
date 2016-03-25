@@ -2,7 +2,8 @@
 
 ##安装
 安装需要的依赖库：vim git ctags python ruby clang astyle
-vim需要支持python解释器运行，如果不支持请查阅[vim编译安装](./doc/vimInstall.md)。
+
+vim需要支持python解释器运行，如果不支持请查阅[vim编译安装](./doc/vim.md)。
 
 使用git安装步骤如下：
 
