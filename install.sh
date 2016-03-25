@@ -1,19 +1,30 @@
 #!/bin/sh
-command -v ctags >/dev/null 2>&1 || { echo >&2 "ctags is missing.Please install first"; exit 1; }  
-command -v python >/dev/null 2>&1 || { echo >&2 "python is missing.Please install first"; exit 1; }  
-command -v ruby >/dev/null 2>&1 || { echo >&2 "ruby is missing.Please install first"; exit 1; }  
-command -v clang >/dev/null 2>&1 || { echo >&2 "clang is missing.Please install first"; exit 1; }  
 
-rm -rf ~/.vim
-rm -rf ~/.vimrc
+package="vim git ctags python ruby clang astyle"
+
+echo "All packages: $package are necessary before install vimrc"
+
+if which apt-get 1>/dev/null 2>&1;then
+    #sudo apt-get install -y vim git ctags python ruby clang astyle
+    sudo apt-get install -y $package
+elif which yum 1>/dev/null 2>&1;then
+    #sudo yum install -y vim git ctags python ruby clang astyle
+    sudo yum install -y $package 
+elif which brew 1>/dev/null 2>&1;then
+    #brew install vim git ctags astyle ruby clang astyle
+    brew install  $package
+fi
+
+mv -f ~/.vim ~/.vim_old
+mv -f ~/.vimrc ~/.vimrc_old
+
 ln -sf $PWD ~/.vim;
-#ln -sf $PWD/vimrcs/vimrc ~/.vimrc;
 cp ./vimrcs/vimrc ~/.vimrc
+
 if [ ! -d temps ];
 then
     mkdir temps
 fi
-
 
 checkVi=`vim --version|grep +python`
 if [ "x$checkVi" == "x" ]
@@ -33,4 +44,4 @@ vim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer --system-libclang
 
-echo "All configure down!! Enjoy!!  :)"
+echo "All configure down!! Enjoy!! :) "
