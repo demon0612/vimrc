@@ -1,6 +1,6 @@
 #!/bin/sh
 
-package="vim git ctags python ruby clang astyle"
+package="vim git ctags python ruby clang astyle ack"
 
 echo "All packages: $package are necessary before install vimrc"
 

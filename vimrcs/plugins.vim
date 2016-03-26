@@ -20,10 +20,14 @@ Plugin 'gmarik/Vundle.vim'
 " colorscheme
 Plugin 'flazz/vim-colorschemes'
 
+" Toggle this to "light" for light colorscheme
+set background=dark
+
 " Set color scheme
 try
     colorscheme gruvbox
     "colorscheme molokai
+    "colorscheme solarized
 catch
 endtry
 
@@ -31,15 +35,9 @@ endtry
 
 " ----- bling/vim-airline -----
 " https://github.com/vim-airline/vim-airline
-" https:://github.com/vim-airline/vim-airline-themes
 
 " Lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
-"let g:airline_theme="luna"
-
-let g:airline_powerline_fonts = 1 
 
 " Show airline for different tabs 
 let g:airline#extensions#tabline#enabled = 1
@@ -47,18 +45,42 @@ let g:airline#extensions#tabline#enabled = 1
 " Show airline for different buffers
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+" Enable special font
+let g:airline_powerline_fonts = 1 
+
+" Separators can be configured independently for the tabline
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep='|'
+
+" Define personal fomat
+"function! AirlineInit()
+    "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
+    "let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
+    "let g:airline_section_c = airline#section#create(['filetype'])
+    "let g:airline_section_x = airline#section#create(['%P'])
+    "let g:airline_section_y = airline#section#create(['%B'])
+    "let g:airline_section_z = airline#section#create_right(['%l','%c'])
+"endfunction
+"autocmd VimEnter * call AirlineInit()
+
+
+
+" ----- vim-airline/vim-airline -----
+" https:://github.com/vim-airline/vim-airline-themes
+
+" the official theme repository for vim-airline
+Plugin 'vim-airline/vim-airline-themes'
+
+" Choose an airline theme
+"let g:airline_theme="luna"
+
 
 
 " ----- scrooloose/nerdtree -----
 " https://github.com/scrooloose/nerdtree
-" https://github.com/jistr/vim-nerdtree-tabs
 
 " The NERD tree allows to explore filesystem and to open files and directories
 Plugin 'scrooloose/nerdtree'	
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" Open/close NERDTree Tabs with F3
-map <F3> :NERDTreeTabsToggle<CR>
 
 " Auto open nerdtree if no file is edited when vim start up
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
@@ -69,38 +91,56 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Nerdtree ignore file type
 let NERDTreeIgnore = ['\.pyc$','__pycache__',' CVS',' .git','.DS_Store','\.swp$','\.swo$']
+
 " Don't show hidden file in nerdtree
 let NERDTreeShowHidden = 0
 
-let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_open_on_console_startup = 0
-let g:nerdtree_tabs_no_startup_for_diff = 1
-let g:nerdtree_tabs_smart_startup_focus = 1
-let g:nerdtree_tabs_open_on_new_tab = 1
-let g:nerdtree_tabs_meaningful_tab_names = 1
-let g:nerdtree_tabs_autoclose = 1
-let g:nerdtree_tabs_synchronize_view = 1
-let g:nerdtree_tabs_synchronize_focus = 1
-let g:nerdtree_tabs_focus_on_files = 0
-let g:nerdtree_tabs_startup_cd = 1
-let g:nerdtree_tabs_autofind = 0
+
+
+" ----- jistr/vim-nerdtree-tabs
+" https://github.com/jistr/vim-nerdtree-tabs
+
+" NERDTree and tabs together in Vim, painlessly
+Plugin 'jistr/vim-nerdtree-tabs'
+
+" Open/close NERDTree Tabs with F3
+map <F3> <plug>NERDTreeTabsToggle<CR>
+
+
+
+" ----- xolox/vim-misc -----
+" https://github.com/xolox/vim-misc
+
+" Libs for easytags
+Plugin 'xolox/vim-misc'     
 
 
 
 " ----- xolox/vim-easytags settings -----
-" https://github.com/xolox/vim-misc
 " https://github.com/xolox/vim-easytags
 
 " Automated tag generatiron 
-Plugin 'xolox/vim-misc'     
 Plugin 'xolox/vim-easytags'
 
+" Set system ctags path
 let g:easytags_cmd = '/usr/bin/ctags'
-set tags=./tags;
-let g:easytags_dynamic_files = 1
+
+" Where to save tags
+set tags=./.tags
+
+" Save tags in the opening file's path
+let g:easytags_dynamic_files = 2
+
+" Events trigger the automatic updating and highlighting performed
 let g:easytags_events = ['BufReadPost', 'BufWritePost']
+
+" Tags is async
 let g:easytags_async = 1
+
+" Distiguish soft and hard links
 let g:easytags_resolve_links = 1
+
+" It will suppress the warning on startup if ctags is not found or not recent enough
 let g:easytags_suppress_ctags_warning = 1
 
 
@@ -114,47 +154,52 @@ Plugin 'majutsushi/tagbar'
 " Open/close tagbar with F4
 nmap <F4> :TagbarToggle<CR>
 
-" Open tagbar automatically whenever possible
+" Forbid open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " Window won't displace help message
-let g:tagbar_compact = 1
+"let g:tagbar_compact = 1
 
+" Forbid auto focus when tarbar is open
 let g:tagbar_autofocus = 0
-let tagbar_width = 32
-let g:tagbar_type_cpp = {
-     \ 'ctagstype' : 'c++',
-     \ 'kinds'     : [
-         \ 'd:macros:1',
-         \ 'g:enums',
-         \ 't:typedefs:0:0',
-         \ 'e:enumerators:0:0',
-         \ 'n:namespaces',
-         \ 'c:classes',
-         \ 's:structs',
-         \ 'u:unions',
-         \ 'f:functions',
-         \ 'm:members:0:0',
-         \ 'v:global:0:0',
-         \ 'x:external:0:0',
-         \ 'l:local:0:0'
-     \ ],
-     \ 'sro'        : '::',
-     \ 'kind2scope' : {
-         \ 'g' : 'enum',
-         \ 'n' : 'namespace',
-         \ 'c' : 'class',
-         \ 's' : 'struct',
-         \ 'u' : 'union'
-     \ },
-     \ 'scope2kind' : {
-         \ 'enum'      : 'g',
-         \ 'namespace' : 'n',
-         \ 'class'     : 'c',
-         \ 'struct'    : 's',
-         \ 'union'     : 'u'
-     \ }
-\ }
+
+" Tarbar width Setting
+let g:tagbar_width = 32
+
+" Define how to create tags about cpp 
+"let g:tagbar_type_cpp = {
+     "\ 'ctagstype' : 'c++',
+     "\ 'kinds'     : [
+         "\ 'd:macros:1',
+         "\ 'g:enums',
+         "\ 't:typedefs:0:0',
+         "\ 'e:enumerators:0:0',
+         "\ 'n:namespaces',
+         "\ 'c:classes',
+         "\ 's:structs',
+         "\ 'u:unions',
+         "\ 'f:functions',
+         "\ 'm:members:0:0',
+         "\ 'v:global:0:0',
+         "\ 'x:external:0:0',
+         "\ 'l:local:0:0'
+     "\ ],
+     "\ 'sro'        : '::',
+     "\ 'kind2scope' : {
+         "\ 'g' : 'enum',
+         "\ 'n' : 'namespace',
+         "\ 'c' : 'class',
+         "\ 's' : 'struct',
+         "\ 'u' : 'union'
+     "\ },
+     "\ 'scope2kind' : {
+         "\ 'enum'      : 'g',
+         "\ 'namespace' : 'n',
+         "\ 'class'     : 'c',
+         "\ 'struct'    : 's',
+         "\ 'union'     : 'u'
+     "\ }
+"\ }
 
 
 
@@ -192,8 +237,6 @@ Plugin 'kien/ctrlp.vim'
 
 " Default mapping and the default command to invoke CtrlP
 let g:ctrlp_map = '<C-O>'
-let g:ctrlp_cmd = 'CtrlP'
-map <C-M> :CtrlPMRU<CR> 
 
 " When invoked without an explicit starting directory,CtrlP won't set its local working directory
 let g:ctrlp_working_path_mode =''
@@ -207,8 +250,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Set the limit of the heigh
 let g:ctrlp_max_height = 15
 
+" Set to choose file from top
 let g:ctrlp_match_window_reversed=0
+
+" The max mruf to remenber
 let g:ctrlp_mruf_max=500
+
+" Enable follow symbol links
 let g:ctrlp_follow_symlinks=1
 
 
@@ -221,7 +269,9 @@ Plugin 'Raimondi/delimitMate'
 
 "using <S-T> to jump out
 
+" Turn on expansion of <CR>
 let delimitMate_expand_cr = 1
+
 augroup mydelimitMate
   au!
   au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
@@ -268,7 +318,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 " True sublime test style multiple selections for vim
 Plugin 'terryma/vim-multiple-cursors'
 
-" Turn of the default mapping 
+" Turn off the default mapping 
 let g:multi_cursor_use_default_mapping=0
 
 " Set the mapping
@@ -314,9 +364,13 @@ let g:UltiSnipsListSnippets='<C-e>'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 
+" Always show the sign
 let g:gitgutter_sign_column_always = 1
+
+" Set the max signs 
 let g:gitgutter_max_signs = 500
 
+"Mapping
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gremove<CR>
 nnoremap <Leader>gl :Glog<CR>
@@ -341,7 +395,10 @@ else
     let g:yankring_history_dir = '~/.vim/temps'
 endif
 
+" Set the max histroy
 let g:yankring_max_history = 500
+
+" yankring is persist betwent different edition
 let g:yankring_persist = 1
 
 nnoremap <silent> <F11> :YRShow<CR>
@@ -357,13 +414,27 @@ Plugin 'jlanzarotta/bufexplorer'
 " be:normal open    bt:toggle open/close    bs:force horizontal split   bv:force vertical split
 
 nnoremap <silent> <F10> :BufExplorer<CR>
-let g:bufExplorerDefaultHelp=0       " Do not show default help.
-let g:bufExplorerShowRelativePath=1  " Show relative paths.
-let g:bufExplorerSortBy='mru'        " Sort by most recently used.
-let g:bufExplorerSplitRight=0        " Split left.
-let g:bufExplorerSplitVertical=1     " Split vertically.
-let g:bufExplorerSplitVertSize = 30  " Split width
-let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+
+" Do not show default help.
+let g:bufExplorerDefaultHelp=0   
+
+" Show relative paths.
+let g:bufExplorerShowRelativePath=1
+
+" Sort by most recently used.
+let g:bufExplorerSortBy='mru'      
+
+" Split left.
+let g:bufExplorerSplitRight=0   
+
+" Split vertically.
+let g:bufExplorerSplitVertical=1 
+
+" Split width
+let g:bufExplorerSplitVertSize = 30
+
+" Open in new window.
+let g:bufExplorerUseCurrentWindow=1
 
 
 
@@ -383,6 +454,7 @@ Plugin 'godlygeek/tabular'
 " Syntax highlighting matching rules and mappings for the original Markdown and extensions
 Plugin 'plasticboy/vim-markdown'
 
+"Turn off the folding 
 let g:vim_markdown_folding_disabled = 1
 
 
@@ -393,7 +465,10 @@ let g:vim_markdown_folding_disabled = 1
 "additional vim c++ syntax highlighting
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+"Enable highlight of class scope
 let g:cpp_class_scope_highlight = 1
+
+"Support for template highlight
 let g:cpp_experimental_template_highlight = 1
 
 
@@ -406,6 +481,7 @@ Plugin 'Chiel92/vim-autoformat'
 
 noremap <silent> <F7> :Autoformat<CR>
 
+"Set personal format
 let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
 let g:formatters_c = ['my_custom_c']
 
@@ -434,33 +510,60 @@ let g:formatters_xml = ['my_custom_xml']
 
 " A code-completion engine for Vim
 Plugin 'Valloric/YouCompleteMe'
+
+" Set error and waring symbol
 let g:ycm_error_symbol='✘'
 let g:ycm_warning_symbol='▲'
 
+" Set python interpreter edition
 let g:ycm_path_to_python_interpreter='python'
 
+" Mappping
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>  
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>  
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
 
+" Set the configure file path
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+
+" Turn off confirm
 let g:ycm_confirm_extra_conf=0  
+
+" Enable tags from file
 let g:ycm_collect_identifiers_from_tags_files = 1  
+
+" Disable identifiers from comments or strings
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
-let g:ycm_min_num_of_chars_for_completion=2
+
+" When the autocomplete works
+let g:ycm_min_num_of_chars_for_completion=3
+
+" Disable omnifunc
 let g:ycm_cache_omnifunc=0  
+
+
+" Enable seed identifiers with syntax
 let g:ycm_seed_identifiers_with_syntax = 1  
+
+" Enable complete in comments
 let g:ycm_complete_in_comments=1  
+
+" Enable complete in strings
 let g:ycm_complete_in_strings=1  
+
+" Enable complete from ultisnips
+let g:ycm_use_ultisnips_completer=1
+
+" Disable in the following file
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'nerdtree' : 1,
       \}
 
+"Mappping
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 
-let g:ycm_use_ultisnips_completer=1
 
 "set completeopt-=preview
 

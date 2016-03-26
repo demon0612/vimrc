@@ -117,9 +117,6 @@ set showcmd
 " Mouse Support in VIM
 "set mouse=a
 
-" Toggle this to "light" for light colorscheme
-set background=dark
-
 " Always show statusbar
 set laststatus=2
 
