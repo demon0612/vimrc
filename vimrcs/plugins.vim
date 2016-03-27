@@ -288,9 +288,6 @@ augroup END
 " Vim plugin for intensely orgasmic commenting
 Plugin 'scrooloose/nerdcommenter'
 
-"using <leader>cc to comment
-"using <leader>cu to uncomment
-
 
 
 " ----- dyng/ctrlsf.vim -----
@@ -301,14 +298,18 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'dyng/ctrlsf.vim'
 
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+" Mapping
+nmap     <leader>ff <Plug>CtrlSFPrompt
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+nnoremap <leader>fo :CtrlSFOpen<CR>
+nnoremap <leader>ft :CtrlSFToggle<CR>
+inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+
+" Define case-sensitivity in search
+let g:ctrlsf_case_sensitive = 'smart'
 
 
 
@@ -335,8 +336,6 @@ let g:multi_cursor_quit_key='<Esc>'
 " The plugin provides mapping to easily delete, changeand add surroundings in pairs
 Plugin 'tpope/vim-surround'
 
-"cs ds ys
-
 
 
 " ----- SirVer/ultisnips -----
@@ -347,28 +346,21 @@ Plugin 'tpope/vim-surround'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger='<C-i>'
+let g:UltiSnipsJumpForwardTrigger = '<C-i>'
+let g:UltiSnipsJumpBackwardTrigger='<C-b>'
+
+" Define the python interpreter version
 let g:ULtiSnipsUsePythonVersion = 2
-let g:UltiSnipsListSnippets='<C-e>'
 
 
 
-" ----- vim-fugitive -----
+" ----- tpope/vim-fugitive -----
 " https://github.com/tpope/vim-fugitive
-" https://github.com/airblade/vim-gitgutter
 
-" Work with git in Vim
-Plugin 'airblade/vim-gitgutter'
+" Using git in Vim
 Plugin 'tpope/vim-fugitive'
-
-" Always show the sign
-let g:gitgutter_sign_column_always = 1
-
-" Set the max signs 
-let g:gitgutter_max_signs = 500
 
 "Mapping
 nnoremap <Leader>gs :Gstatus<CR>
@@ -383,25 +375,20 @@ nnoremap <Leader>gd :Gdiff<CR>
 
 
 
-" ----- YankRing -----
-" https://github.com/vim-scripts/YankRing.vim
+" ----- airblade/vim-gitgutter -----
+" https://github.com/airblade/vim-gitgutter
 
-" Maintains a histroy of previous yanks,changes and deletes
-Plugin 'YankRing.vim'
+" Work with git in Vim
+Plugin 'airblade/vim-gitgutter'
 
-if has("win16")|| has("win32")
-    "Don't do anything
-else
-    let g:yankring_history_dir = '~/.vim/temps'
-endif
+"Don't set any mappings at all
+let g:gitgutter_map_keys = 0
 
-" Set the max histroy
-let g:yankring_max_history = 500
+" Always show the sign
+let g:gitgutter_sign_column_always = 1
 
-" yankring is persist betwent different edition
-let g:yankring_persist = 1
-
-nnoremap <silent> <F11> :YRShow<CR>
+" Set the max signs 
+let g:gitgutter_max_signs = 1000
 
 
 
@@ -413,28 +400,13 @@ Plugin 'jlanzarotta/bufexplorer'
 
 " be:normal open    bt:toggle open/close    bs:force horizontal split   bv:force vertical split
 
-nnoremap <silent> <F10> :BufExplorer<CR>
-
-" Do not show default help.
-let g:bufExplorerDefaultHelp=0   
+nnoremap <silent> <F5> :BufExplorer<CR>
 
 " Show relative paths.
 let g:bufExplorerShowRelativePath=1
 
 " Sort by most recently used.
 let g:bufExplorerSortBy='mru'      
-
-" Split left.
-let g:bufExplorerSplitRight=0   
-
-" Split vertically.
-let g:bufExplorerSplitVertical=1 
-
-" Split width
-let g:bufExplorerSplitVertSize = 30
-
-" Open in new window.
-let g:bufExplorerUseCurrentWindow=1
 
 
 
@@ -443,19 +415,6 @@ let g:bufExplorerUseCurrentWindow=1
 
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
-
-" :Tab aim-character
-
-
-
-" ----- plasticboy/vim-markdown -----
-" https://github.com/plasticboy/vim-markdown
-
-" Syntax highlighting matching rules and mappings for the original Markdown and extensions
-Plugin 'plasticboy/vim-markdown'
-
-"Turn off the folding 
-let g:vim_markdown_folding_disabled = 1
 
 
 
@@ -479,7 +438,7 @@ let g:cpp_experimental_template_highlight = 1
 "provide easy code formatting in vim
 Plugin 'Chiel92/vim-autoformat'
 
-noremap <silent> <F7> :Autoformat<CR>
+noremap <silent> <F6> :Autoformat<CR>
 
 "Set personal format
 let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
@@ -519,9 +478,9 @@ let g:ycm_warning_symbol='▲'
 let g:ycm_path_to_python_interpreter='python'
 
 " Mappping
-nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>  
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>  
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
+nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR>  
+nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  
+nnoremap <leader>dg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
 
 " Set the configure file path
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
@@ -561,8 +520,8 @@ let g:ycm_filetype_blacklist = {
       \}
 
 "Mappping
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
+"let g:ycm_key_list_select_completion = ['<Down>']
+"let g:ycm_key_list_previous_completion = ['<Up>']
 
 
 "set completeopt-=preview
@@ -620,6 +579,39 @@ let g:ycm_key_list_previous_completion = ['<Up>']
 "let g:syntastic_cpp_compiler = 'clang++'
 "let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libstdc++'
 "let g:syntastic_enable_balloons = 1 "whether to show balloons"
+
+
+
+" ----- YankRing -----
+" https://github.com/vim-scripts/YankRing.vim
+
+" Maintains a histroy of previous yanks,changes and deletes
+"Plugin 'YankRing.vim'
+
+"nnoremap <silent> <F11> :YRShow<CR>
+
+"if has("win16")|| has("win32")
+    ""Don't do anything
+"else
+    "let g:yankring_history_dir = '~/.vim/temps'
+"endif
+
+"" Set the max histroy
+"let g:yankring_max_history = 500
+
+"" yankring is persist betwent different edition
+"let g:yankring_persist = 1
+
+
+
+" ----- plasticboy/vim-markdown -----
+" https://github.com/plasticboy/vim-markdown
+
+" Syntax highlighting matching rules and mappings for the original Markdown and extensions
+Plugin 'plasticboy/vim-markdown'
+
+"Turn off the folding 
+let g:vim_markdown_folding_disabled = 1
 
 
 

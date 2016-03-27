@@ -1,4 +1,4 @@
-#~/.vim/vimrc
+#Using Vim As IDE
 
 ##安装
 安装需要的依赖库：vim git ctags python ruby clang astyle
@@ -50,41 +50,30 @@ vim需要支持python解释器运行，如果不支持请查阅[vim编译安装]
 
 * [ctrlsf](https://github.com/dyng/ctrlsf.vim)：搜索审查代码
 
-* [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+* [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)：智能块选择
 
-* [vim-surround](https://github.com/tpope/vim-surround)
+* [vim-surround](https://github.com/tpope/vim-surround)：添加修改删除成对符号
 
-* [ultisnips](https://github.com/SirVer/ultisnips)
+* [ultisnips](https://github.com/SirVer/ultisnips)：智能添加各种语言常用代码块
 
-* [vim-snippets](https://github.com/honza/vim-snippets)
+* [vim-snippets](https://github.com/honza/vim-snippets)：常用代码块库
 
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)：Vim中集成git
 
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)：在边框栏显示git diff内容
 
-* [YankRing](https://github.com/vim-scripts/YankRing.vim)
+* [bufexplorer](https://github.com/jlanzarotta/bufexplorer)：buffer管理器
 
-* [bufexplorer](https://github.com/jlanzarotta/bufexplorer)
+* [tabular](https://github.com/godlygeek/tabular)：格式对齐
 
-* [tabular](https://github.com/godlygeek/tabular)
+* [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)：C++语法高亮（支持C++11）
 
-* [vim-markdown](https://github.com/plasticboy/vim-markdown)
+* [vim-autoformat](https://github.com/Chiel92/vim-autoformat)：代码格式自动整理
 
-* [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
-
-* [vim-autoformat](https://github.com/Chiel92/vim-autoformat)
-
-* [YouCompleteMe](https//github.com/Valloric/YouCompleteMe)
+* [YouCompleteMe](https//github.com/Valloric/YouCompleteMe)：自动补全插件
 
 
-
-
-
-
-
-
-	插件详细参数请查看[这里](./doc/plugin.md)
-
+	插件详细参数请查看[这里](./doc/plugin.md)。
 
 ##主要按键映射
 
@@ -92,10 +81,10 @@ vim需要支持python解释器运行，如果不支持请查阅[vim编译安装]
 
  按键|命令|说明  
  ------------- |------------------| -----------
-  F3 | :NERDTreeTabsToggle<CR\>  | 开关文件资源管理器
-  F4 | :TagbarToggle<CR\>		 | 开关标签管理器
-
-##基本设置
-
+  F2 | :AV\<CR\>			| 打开对应文件
+  F3 | :NERDTreeTabsToggle\<CR\>  | 开关文件资源管理器
+  F4 | :TagbarToggle\<CR\>		 | 开关标签管理器
+  F5 | :BufExplorer\<CR\>	   |打开buffer管理器
+  F6 | :Autoformat\<CR\>		   |自动格式化代码
 
 

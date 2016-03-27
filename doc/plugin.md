@@ -146,272 +146,138 @@
 
 ##[delimitMate](https://github.com/Raimondi/delimitMate)
 ```shell
-let delimitMate_expand_cr = 1 "自动打开对于<CR>命令的扩展
-augroup mydelimitMate
-  au!
-  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
-  au FileType tex let b:delimitMate_quotes = ""
-  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
-  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
-augroup END "设置不同文件自动补全格式
-
+	let delimitMate_expand_cr = 1 "自动打开对于<CR>命令的扩展
+	augroup mydelimitMate
+  		au!
+		au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  		au FileType tex let b:delimitMate_quotes = ""
+  		au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  		au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+	augroup END "设置不同文件自动补全格式
 ```
-
-## [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-按键			   		|    命令
--------------- 		| ------------------
-<leader\>cc 		|	NERDComComment |
-<leader\>cn 		|	NERDComNestedComment|
-<leader\>c<space\>  |	NERDComToggleComment|
-<leader\>cm 		|	NERDComMinimalComment|
-<leader\>cu 		|	NERDComUncommentLine|
-
 
 ##[ctrlsf](https://github.com/dyng/ctrlsf.vim)
 
 ```shell
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+	nmap     <leader>ff <Plug>CtrlSFPrompt  "设置键盘映射
+	vmap     <leader>ff <Plug>CtrlSFVwordPath
+	vmap     <leader>fF <Plug>CtrlSFVwordExec
+	nmap     <leader>fn <Plug>CtrlSFCwordPath
+	nmap     <leader>fp <Plug>CtrlSFPwordPath
+	nnoremap <leader>fo :CtrlSFOpen<CR>
+	nnoremap <leader>ft :CtrlSFToggle<CR>
+	inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+	let g:ctrlsf_case_sensitive = 'smart' "将大小写设定为smart
+	let g:ctrlsf_winsize = '30%' "设定搜索结果窗口所占比例
 ```
 
 ##[vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
-
-```shell
-" Turn off the default mapping 
-let g:multi_cursor_use_default_mapping=0
-
-" Set the mapping
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-```
-
-##[vim-surround](https://github.com/tpope/vim-surround)
-
-```shell
-"cs ds ys
+```shell 
+	let g:multi_cursor_use_default_mapping=0 "关闭默认键盘映射
+	let g:multi_cursor_next_key='<C-n>' "设置键盘映射
+	let g:multi_cursor_prev_key='<C-p>'
+	let g:multi_cursor_skip_key='<C-x>'
+	let g:multi_cursor_quit_key='<Esc>'
 ```
 
 ##[ultisnips](https://github.com/SirVer/ultisnips)
 
 ```shell
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
-let g:ULtiSnipsUsePythonVersion = 2
-let g:UltiSnipsListSnippets='<C-e>'
+	let g:UltiSnipsExpandTrigger='<C-u>' "设置键盘映射
+	let g:UltiSnipsJumpForwardTrigger = '<C-u>'
+	let g:UltiSnipsJumpBackwardTrigger='<C-b>'
+	let g:ULtiSnipsUsePythonVersion = 2 "指定python版本
 ```
-
-##[vim-snippets](https://github.com/honza/vim-snippets)
-
-
-##[vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-
 
 ##[vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 ```shell
-" Always show the sign
-let g:gitgutter_sign_column_always = 1
-
-" Set the max signs 
-let g:gitgutter_max_signs = 500
-
-"Mapping
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gr :Gremove<CR>
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gm :Gmove 
-nnoremap <Leader>gp :Ggrep 
-nnoremap <Leader>gR :Gread<CR>
-nnoremap <Leader>gg :Git 
-nnoremap <Leader>gd :Gdiff<CR>
+	nnoremap <Leader>gs :Gstatus<CR> "设置键盘映射
+	nnoremap <Leader>gr :Gremove<CR>
+	nnoremap <Leader>gl :Glog<CR>
+	nnoremap <Leader>gb :Gblame<CR>
+	nnoremap <Leader>gm :Gmove 
+	nnoremap <Leader>gp :Ggrep 
+	nnoremap <Leader>gR :Gread<CR>
+	nnoremap <Leader>gg :Git 
+	nnoremap <Leader>gd :Gdiff<CR>
 ```
 
-##[YankRing](https://github.com/vim-scripts/YankRing.vim)
-
+##[vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
 ```shell
-if has("win16")|| has("win32")
-    "Don't do anything
-else
-    let g:yankring_history_dir = '~/.vim/temps'
-endif
-
-" Set the max histroy
-let g:yankring_max_history = 500
-
-" yankring is persist betwent different edition
-let g:yankring_persist = 1
-
-nnoremap <silent> <F11> :YRShow<CR>
+	let g:gitgutter_map_keys = 0 "禁止使用默认mapping
+	let g:gitgutter_sign_column_always = 1 "总是在左侧显示状态栏
+	let g:gitgutter_max_signs = 1000 "允许显示最大数目
 ```
 
 ## [bufexplorer](https://github.com/jlanzarotta/bufexplorer)
 
-
 ```shell
-" be:normal open    bt:toggle open/close    bs:force horizontal split   bv:force vertical split
+	nnoremap <silent> <F5> :BufExplorer<CR> "F5功能键打开管理器
+	let g:bufExplorerShowRelativePath=1 "显示相对路径
+	let g:bufExplorerSortBy='mru'  "以最近使用文件排列文件
 
-nnoremap <silent> <F10> :BufExplorer<CR>
-
-" Do not show default help.
-let g:bufExplorerDefaultHelp=0   
-
-" Show relative paths.
-let g:bufExplorerShowRelativePath=1
-
-" Sort by most recently used.
-let g:bufExplorerSortBy='mru'      
-
-" Split left.
-let g:bufExplorerSplitRight=0   
-
-" Split vertically.
-let g:bufExplorerSplitVertical=1 
-
-" Split width
-let g:bufExplorerSplitVertSize = 30
-
-" Open in new window.
-let g:bufExplorerUseCurrentWindow=1
 ```
 
-
-## [tabular](https://github.com/godlygeek/tabular)
-" :Tab aim-character
-
-## [vim-markdown](https://github.com/plasticboy/vim-markdown)
-
-```shell
-"Turn off the folding 
-let g:vim_markdown_folding_disabled = 1
-```
 
 ## [vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 
 ```shell
-"Enable highlight of class scope
-let g:cpp_class_scope_highlight = 1
-
-"Support for template highlight
-let g:cpp_experimental_template_highlight = 1
+	let g:cpp_class_scope_highlight = 1 "增加对class的支持
+	let g:cpp_experimental_template_highlight = 1 "增加对模板的支持
 
 ```
 
 ## [vim-autoformat](https://github.com/Chiel92/vim-autoformat)
 
 ```shell
-noremap <silent> <F7> :Autoformat<CR>
+	noremap <silent> <F6> :Autoformat<CR>"设置快捷键F6自动格式化代码
 
-"Set personal format
-let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
-let g:formatters_c = ['my_custom_c']
+	let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"' "设置一系列文件格式化代码方式
+	let g:formatters_c = ['my_custom_c']
 
-let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %> /dev/null 2>&1"'
-let g:formatters_cpp = ['my_custom_cpp']
+	let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %> /dev/null 2>&1"'
+	let g:formatters_cpp = ['my_custom_cpp']
 
-let g:formatdef_my_custom_perl='"astyle --style=gnu --sufiix=none %"'
-let g:formatters_perl = ['my_custom_perl']
+	let g:formatdef_my_custom_perl='"astyle --style=gnu --sufiix=none %"'
+	let g:formatters_perl = ['my_custom_perl']
 
-let g:formatdef_my_custom_py='"autopep8 -i --aggressive %"'
-let g:formatters_py = ['my_custom_py']
+	let g:formatdef_my_custom_py='"autopep8 -i --aggressive %"'
+	let g:formatters_py = ['my_custom_py']
 
-let g:formatdef_my_custom_java='"astyle --style=java --sufiix=none %"'
-let g:formatters_java = ['my_custom_java']
+	let g:formatdef_my_custom_java='"astyle --style=java --sufiix=none %"'
+	let g:formatters_java = ['my_custom_java']
 
-let g:formatdef_my_custom_jsp='"astyle --style=gnu --sufiix=none %"'
-let g:formatters_jsp = ['my_custom_jsp']
+	let g:formatdef_my_custom_jsp='"astyle --style=gnu --sufiix=none %"'
+	let g:formatters_jsp = ['my_custom_jsp']
 
-let g:formatdef_my_custom_xml='"astyle --style=gnu --sufiix=none %"'
-let g:formatters_xml = ['my_custom_xml']
+	let g:formatdef_my_custom_xml='"astyle --style=gnu --sufiix=none %"'
+	let g:formatters_xml = ['my_custom_xml']
 ```
 
 ## [YouCompleteMe](https//github.com/Valloric/YouCompleteMe)
 
 ```shell
-" Set error and waring symbol
-let g:ycm_error_symbol='✘'
-let g:ycm_warning_symbol='▲'
-
-" Set python interpreter edition
-let g:ycm_path_to_python_interpreter='python'
-
-" Mappping
-nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>  
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>  
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
-
-" Set the configure file path
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
-
-" Turn off confirm
-let g:ycm_confirm_extra_conf=0  
-
-" Enable tags from file
-let g:ycm_collect_identifiers_from_tags_files = 1  
-
-" Disable identifiers from comments or strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-
-" When the autocomplete works
-let g:ycm_min_num_of_chars_for_completion=3
-
-" Disable omnifunc
-let g:ycm_cache_omnifunc=0  
-
-
-" Enable seed identifiers with syntax
-let g:ycm_seed_identifiers_with_syntax = 1  
-
-" Enable complete in comments
-let g:ycm_complete_in_comments=1  
-
-" Enable complete in strings
-let g:ycm_complete_in_strings=1  
-
-" Enable complete from ultisnips
-let g:ycm_use_ultisnips_completer=1
-
-" Disable in the following file
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'nerdtree' : 1,
-      \}
-
-"Mappping
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
+	let g:ycm_error_symbol='✘' ”设置错误和警告标示
+	let g:ycm_warning_symbol='▲'
+	let g:ycm_path_to_python_interpreter='python' "设定python版本
+	nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR> "设定映射
+	nnoremap <leader>df :YcmCompleter GoToDefinition<CR>  
+	nnoremap <leader>dg :YcmCompleter GoToDefinitionElseDeclaration<CR>  
+	let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  "设定configure文件
+	let g:ycm_confirm_extra_conf=0  "关闭确认信息
+	let g:ycm_collect_identifiers_from_tags_files = 1  "允许从tag中获取信息
+	let g:ycm_collect_identifiers_from_comments_and_strings = 0 "禁止从注释和字符串中获得信息
+	let g:ycm_min_num_of_chars_for_completion=3 "允许打开自动补全最少字母数
+	let g:ycm_cache_omnifunc=0  ”关闭omnifunc支持
+	let g:ycm_seed_identifiers_with_syntax = 1  "允许从语法中获得相关信息
+	let g:ycm_complete_in_comments=1  "允许在注释中自动补全
+	let g:ycm_complete_in_strings=1  "允许在字符串中自动补全
+	let g:ycm_use_ultisnips_completer=1  "允许使用ultisnips
+	let g:ycm_filetype_blacklist = {
+      	\ 'tagbar' : 1,
+      	\ 'nerdtree' : 1,
+      	\}"在以上文件中禁止自动补全
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
