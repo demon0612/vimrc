@@ -41,6 +41,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep='|'
 
+" Set tabline name
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " Define personal fomat
 "function! AirlineInit()
     "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
