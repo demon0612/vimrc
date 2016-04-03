@@ -73,3 +73,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts
