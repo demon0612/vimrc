@@ -37,12 +37,12 @@ import ycm_core
 flags = [
 '-Wall',
 '-Wextra',
-#'-Werror',
-#'-Wc++98-compat',
+'-Werror',
+'-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
-#'-DNDEBUG',
+'-DNDEBUG',
 # You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
 # source code needs it.
 #'-DUSE_CLANG_COMPLETER',
@@ -63,31 +63,28 @@ flags = [
 'c++',
 
 '-isystem','/usr/include',
-
 '-isystem','/usr/local/include',
-
 '-isystem','/usr/include/c++/5.3.1',
 
- '-isystem','.',
- '-isystem','/usr/local/include/Geant4',
- '-isystem','/usr/local/include/root',
- '-isystem','/home/zhl/Software/cocos2d-x',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/base',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/physics',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/physics3d',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/math',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/2d',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/ui',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/network',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/renderer',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/audio/include',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/editor-support',
- '-isystem','/home/zhl/Software/cocos2d-x/cocos/platform/linux',
- '-isystem','/home/zhl/Software/cocos2d-x/external',
- '-isystem','/home/zhl/Software/cocos2d-x/extensions',
- '-isystem','/home/zhl/Software/cocos2d-x/external/linux-specific/',
- '-isystem','/home/zhl/Software/cocos2d-x/external/chipmunk/include'
+'-I','/usr/local/include/Geant4',
+'-I','/usr/local/include/root',
+'-I','/home/zhl/Software/cocos2d-x',
+'-I','/home/zhl/Software/cocos2d-x/cocos',
+'-I','/home/zhl/Software/cocos2d-x/cocos/base',
+'-I','/home/zhl/Software/cocos2d-x/cocos/physics',
+'-I','/home/zhl/Software/cocos2d-x/cocos/physics3d',
+'-I','/home/zhl/Software/cocos2d-x/cocos/math',
+'-I','/home/zhl/Software/cocos2d-x/cocos/2d',
+'-I','/home/zhl/Software/cocos2d-x/cocos/ui',
+'-I','/home/zhl/Software/cocos2d-x/cocos/network',
+'-I','/home/zhl/Software/cocos2d-x/cocos/renderer',
+'-I','/home/zhl/Software/cocos2d-x/cocos/audio/include',
+'-I','/home/zhl/Software/cocos2d-x/cocos/editor-support',
+'-I','/home/zhl/Software/cocos2d-x/cocos/platform/linux',
+'-I','/home/zhl/Software/cocos2d-x/external',
+'-I','/home/zhl/Software/cocos2d-x/extensions',
+'-I','/home/zhl/Software/cocos2d-x/external/linux-specific/',
+'-I','/home/zhl/Software/cocos2d-x/external/chipmunk/include',
 ]
 
 

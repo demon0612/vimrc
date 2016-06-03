@@ -453,6 +453,7 @@ nnoremap <leader>dg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Set the configure file path
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'  
 
 " Turn off confirm
 let g:ycm_confirm_extra_conf=0  
@@ -468,7 +469,6 @@ let g:ycm_min_num_of_chars_for_completion=1
 
 " Disable omnifunc
 let g:ycm_cache_omnifunc=0  
-
 
 " Enable seed identifiers with syntax
 let g:ycm_seed_identifiers_with_syntax = 1  
@@ -494,6 +494,7 @@ let g:ycm_filetype_blacklist = {
 
 
 "set completeopt-=preview
+set completeopt =longest,menu
 
 " Menu color
 "highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
