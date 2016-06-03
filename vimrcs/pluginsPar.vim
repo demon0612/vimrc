@@ -464,7 +464,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
 
 " When the autocomplete works
-let g:ycm_min_num_of_chars_for_completion=3
+let g:ycm_min_num_of_chars_for_completion=1
 
 " Disable omnifunc
 let g:ycm_cache_omnifunc=0  

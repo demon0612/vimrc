@@ -1,4 +1,4 @@
-#This file is NOT licensed under the GPLv3, which is the license for the rest
+# This file is NOT licensed under the GPLv3, which is the license for the rest
 # of YouCompleteMe.
 #
 # Here's the license text for this file:
@@ -27,8 +27,10 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 # For more information, please refer to <http://unlicense.org/>
+
 import os
 import ycm_core
+
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
@@ -40,48 +42,67 @@ flags = [
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
-#'-stdlib=libc++',
+#'-DNDEBUG',
+# You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
+# source code needs it.
+#'-DUSE_CLANG_COMPLETER',
 # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
 # language to use when compiling headers. So it will guess. Badly. So C++
 # headers will be compiled as C headers. You don't want that so ALWAYS specify
 # a "-std=<something>".
 # For a C project, you would set this to something like 'c99' instead of
 # 'c++11'.
-#'-std=c++11',
-'-std=c++',
+'-std=c++11',
+#'-std=c++',
 # ...and the same thing goes for the magic -x option which specifies the
 # language that the files to be compiled are written in. This is mostly
 # relevant for c++ headers.
 # For a C project, you would set this to 'c' instead of 'c++'.
+
 '-x',
 'c++',
-'-I',
-'.',
-'-isystem',
-'/usr/include',
-'-isystem',
-'/usr/include/c++/4.8.3',
-'-isystem',
-'/usr/local/include',
-'-isystem',
-'/usr/local/include/root',
-'-isystem',
-'/usr/local/include/Geant4'
 
+'-isystem','/usr/include',
 
-#'-isystem',
-#'/Library/Developer/CommandLineTools/usr/include',
-#'-isystem',
-#'/Library/Developer/CommandLineTools/usr/bin/../lib/c++/v1',
+'-isystem','/usr/local/include',
 
+'-isystem','/usr/include/c++/5.3.1',
+
+ '-isystem','.',
+ '-isystem','/usr/local/include/Geant4',
+ '-isystem','/usr/local/include/root',
+ '-isystem','/home/zhl/Software/cocos2d-x',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/base',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/physics',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/physics3d',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/math',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/2d',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/ui',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/network',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/renderer',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/audio/include',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/editor-support',
+ '-isystem','/home/zhl/Software/cocos2d-x/cocos/platform/linux',
+ '-isystem','/home/zhl/Software/cocos2d-x/external',
+ '-isystem','/home/zhl/Software/cocos2d-x/extensions',
+ '-isystem','/home/zhl/Software/cocos2d-x/external/linux-specific/',
+ '-isystem','/home/zhl/Software/cocos2d-x/external/chipmunk/include'
 ]
+
+
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
 #
+# You can get CMake to generate this file for you by adding:
+#   set( CMAKE_EXPORT_COMPILE_COMMANDS 1 )
+# to your CMakeLists.txt file.
+#
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.
 compilation_database_folder = ''
+
 if os.path.exists( compilation_database_folder ):
   database = ycm_core.CompilationDatabase( compilation_database_folder )
 else:
@@ -160,10 +181,10 @@ def FlagsForFile( filename, **kwargs ):
     # NOTE: This is just for YouCompleteMe; it's highly likely that your project
     # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
     # ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.
-    #try:
-    #  final_flags.remove( '-stdlib=libc++' )
-    #except ValueError:
-    #  pass
+    try:
+      final_flags.remove( '-stdlib=libc++' )
+    except ValueError:
+      pass
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )

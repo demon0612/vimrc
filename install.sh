@@ -1,6 +1,6 @@
 #!/bin/sh
 
-package="vim git ctags python ruby clang astyle ack"
+package="vim git ctags python ruby astyle ack"
 
 echo "All packages: $package are necessary before install vimrc"
 
@@ -42,6 +42,6 @@ cd fonts
 vim +PluginInstall +qall
 
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer --system-libclang
+./install.py --clang-completer
 
 echo "All configure down!! Enjoy!! :) "
