@@ -12,7 +12,11 @@ Plugin 'bling/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 Plugin 'scrooloose/nerdtree'	
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'jistr/vim-nerdtree-tabs'
 
@@ -24,7 +28,7 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'vim-scripts/a.vim'		
 
-Plugin 'kien/ctrlp.vim'			
+"Plugin 'ctrlpvim/ctrlp.vim'			
 
 Plugin 'Raimondi/delimitMate'           
 
@@ -36,21 +40,19 @@ Plugin 'dyng/ctrlsf.vim'
 
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'tpope/vim-surround'
-
-Plugin 'SirVer/ultisnips'
+"Plugin 'tpope/vim-surround'
 
 Plugin 'honza/vim-snippets'
 
-Plugin 'tpope/vim-fugitive'
+Plugin 'SirVer/ultisnips'
+
+"Plugin 'tpope/vim-fugitive'
 
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'jlanzarotta/bufexplorer'
 
-Plugin 'godlygeek/tabular'
-
-Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'godlygeek/tabular'
 
 Plugin 'Chiel92/vim-autoformat'
 
