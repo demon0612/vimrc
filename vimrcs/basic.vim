@@ -9,13 +9,13 @@ set nocompatible
 set viminfo='1000,f1,:1000,/1000
 
 " Keep 1000 lines of command line history
-set history=1000	
+set history=1000
 
-" Auto read file when it is changed 
-set autoread		
+" Auto read file when it is changed
+set autoread
 
-" Auto change the file path 
-set autochdir 
+" Auto change the file path
+set autochdir
 
 " Set 5 lines to the cursor
 set scrolloff=5
@@ -24,7 +24,7 @@ set scrolloff=5
 set wildmenu
 
 " start wild expansion in the command line using <TAB>
-set wildchar=<TAB>	
+set wildchar=<TAB>
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -47,14 +47,14 @@ set whichwrap+=<,>,h,l
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 " Forbid restart searching when buffer is empty
 set nowrapscan
@@ -63,7 +63,7 @@ set nowrapscan
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 
 " How many tenths of a second to blink when matching brackets
 set matchtime=2
@@ -106,7 +106,7 @@ set autoindent
 set smartindent
 
 " Wrap lines
-set wrap 
+set wrap
 
 " Show the line number
 set number
@@ -122,15 +122,15 @@ set laststatus=2
 
 " Change the updatetime
 set updatetime=250
- 
+
 " Yank to the system register (*) by default
-set clipboard+=unnamed	
+set clipboard+=unnamed
 
 " Show current mode
-set showmode		
+set showmode
 
 " Copy the previous indentation on autoindenting
-set copyindent		
+set copyindent
 
 " Highlight current line
 "set cursorline
@@ -140,20 +140,20 @@ set copyindent
 
 " Abandon to split word with special character
 set iskeyword+=_,$,@,%,#,-
- 
+
 " Set foldmethod manula/indent/syntax   za zR zM
 set foldmethod=syntax
 
 " Close all fold when startup
 set nofoldenable
- 
+
 " disable sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
-" Turn on persistent undo  
+" Turn on persistent undo
 try
     set undodir=~/.vim/temps/
     set undofile
@@ -162,9 +162,9 @@ endtry
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set showtabline=2
-  "set tabline = %M\ %t
+    set switchbuf=useopen,usetab,newtab
+    set showtabline=2
+    "set tabline = %M\ %t
 catch
 endtry
 
@@ -188,7 +188,7 @@ if has("gui_macvim")
 endif
 
 " No gui options
-"set guioptions=             
+"set guioptions=
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r
@@ -199,4 +199,4 @@ set guioptions-=L
 
 
 
- 
+

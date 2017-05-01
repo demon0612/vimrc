@@ -138,7 +138,7 @@ let g:NERDTreeIndicatorMapCustom = {
 
 
 
-" ----- jistr/vim-nerdtree-tabs
+" ----- jistr/vim-nerdtree-tabs -----
 " https://github.com/jistr/vim-nerdtree-tabs
 
 " NERDTree and tabs together in Vim, painlessly
@@ -164,7 +164,7 @@ let g:nerdtree_tabs_autoclose=1
 
 
 
-" ----- xolox/vim-easytags settings -----
+" ----- xolox/vim-easytags -----
 " https://github.com/xolox/vim-easytags
 
 " Automated tag generatiron
@@ -192,13 +192,13 @@ let g:easytags_suppress_ctags_warning = 1
 
 
 
-" ----- majutsushi/tagbar settings -----
+" ----- majutsushi/tagbar -----
 " https://github.com/majutsushi/tagbar
 
 " A plugin reads your tags file and displays the information in an accesible way inside vim
 
 " Open/close tagbar with F4
-nnoremap <F4> :TagbarToggle<CR>
+nmap <F4> :TagbarToggle<CR>
 
 " Forbid open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
@@ -308,7 +308,7 @@ let g:alternateExtensions_CXX = "H,HH"
 
 
 
-" ----- Raimondi/delimitMate settings -----
+" ----- Raimondi/delimitMate -----
 " https://github.com/Raimondi/delimitMate
 
 " A smart plugin to insert matching delimiters, like quotes,parentheses,and curly braches
@@ -463,7 +463,7 @@ let g:bufExplorerSortBy='mru'
 
 
 
-" ----- Plugin Chiel92/vim-autoformat -----
+" ----- Chiel92/vim-autoformat -----
 "https://github.com/Chiel92/vim-autoformat
 
 "provide easy code formatting in vim

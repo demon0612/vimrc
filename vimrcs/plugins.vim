@@ -14,23 +14,23 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
-Plugin 'scrooloose/nerdtree'	
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'jistr/vim-nerdtree-tabs'
 
-Plugin 'xolox/vim-misc'     
+Plugin 'xolox/vim-misc'
 
 Plugin 'xolox/vim-easytags'
 
-Plugin 'majutsushi/tagbar'		
+Plugin 'majutsushi/tagbar'
 
-Plugin 'vim-scripts/a.vim'		
+Plugin 'vim-scripts/a.vim'
 
-"Plugin 'ctrlpvim/ctrlp.vim'			
+"Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'Raimondi/delimitMate'           
+Plugin 'Raimondi/delimitMate'
 
 Plugin 'scrooloose/nerdcommenter'
 

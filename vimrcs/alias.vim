@@ -1,8 +1,7 @@
 " set leader to ,
-let mapleader=","
 let g:mapleader=","
 
-" :W sudo saves the file 
+" :W sudo saves the file
 command W w !sudo tee % > /dev/null
 
 " turn off search highlighting
@@ -24,7 +23,7 @@ map <leader>te :tabedit <C-R>=expand("%:p:h")<CR>/
 map <leader>to :tabonly<CR>
 map <leader>tc :tabclose<CR>
 
-" go to prev tab 
+" go to prev tab
 map <S-H> gT
 " go to next tab
 map <S-L> gt
