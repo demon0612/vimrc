@@ -472,7 +472,7 @@ let g:bufExplorerSortBy='mru'
 nnoremap <silent> <F7> :Autoformat<CR>
 
 " Autoformat when saving a file
-autocmd BufWrite * :Autoformat
+"autocmd BufWrite * :Autoformat
 
 "Set personal format
 let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
