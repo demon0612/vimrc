@@ -44,7 +44,7 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'honza/vim-snippets'
 
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 "Plugin 'tpope/vim-fugitive'
 
@@ -56,7 +56,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'Chiel92/vim-autoformat'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 "Plugin 'EasyMotion'
 

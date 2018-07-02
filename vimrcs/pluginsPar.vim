@@ -420,7 +420,8 @@ let g:ULtiSnipsUsePythonVersion = 2
 let g:gitgutter_map_keys = 0
 
 " Always show the sign
-let g:gitgutter_sign_column_always = 1
+"let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " Set the max signs
 let g:gitgutter_max_signs = 1000
