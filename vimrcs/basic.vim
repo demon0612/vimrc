@@ -69,7 +69,7 @@ set showmatch
 set matchtime=2
 
 " A buffer becomes hidden when it is abandoned
-set hidden
+"set hidden
 
 " Add a bit extra margin to the left
 "set foldcolumn=1
@@ -80,6 +80,8 @@ set ffs=unix,dos,mac
 " Charset Init
 scriptencoding utf-8
 set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set termencoding=utf-8
 
 " Turn backup off
 set nobackup
@@ -195,8 +197,3 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-
-
-
-
-

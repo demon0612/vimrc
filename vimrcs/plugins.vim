@@ -18,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'xolox/vim-misc'
 
@@ -30,33 +30,33 @@ Plugin 'vim-scripts/a.vim'
 
 "Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
 
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'mileszs/ack.vim'
+"Plugin 'mileszs/ack.vim'
 
-Plugin 'dyng/ctrlsf.vim'
+"Plugin 'dyng/ctrlsf.vim'
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
 "Plugin 'tpope/vim-surround'
 
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
 "Plugin 'SirVer/ultisnips'
 
 "Plugin 'tpope/vim-fugitive'
 
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 
 Plugin 'jlanzarotta/bufexplorer'
 
 "Plugin 'godlygeek/tabular'
 
-Plugin 'Chiel92/vim-autoformat'
+"Plugin 'Chiel92/vim-autoformat'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 "Plugin 'EasyMotion'
 
@@ -65,6 +65,14 @@ Plugin 'Chiel92/vim-autoformat'
 "Plugin 'YankRing.vim'
 
 "Plugin 'plasticboy/vim-markdown'
+
+Plugin 'skywind3000/asyncrun.vim'
+
+Plugin 'Yggdroot/LeaderF'
+
+Plugin 'junegunn/fzf'
+
+"Plugin 'tpope/vim-fireplace'
 
 call vundle#end()
 

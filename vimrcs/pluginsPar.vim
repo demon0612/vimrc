@@ -28,11 +28,21 @@ endtry
 
 " Lean & mean status/tabline for vim that's light as air
 
+" From HUYA
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+" End
+
 " Show airline for different tabs
 let g:airline#extensions#tabline#enabled = 1
 
-" Show airline for different buffers
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" Disable Show airline for different buffers
+let g:airline#extensions#tabline#buffer_nr_show = 0
+
+" defines the name of a formatter for how buffer names are displayed
+"let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Enable special font
 let g:airline_powerline_fonts = 1
@@ -41,8 +51,20 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep='|'
 
+
+" From HUYA
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+" End
+
 " Just show the filename (no path) in the tab
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Define personal fomat
 "function! AirlineInit()
@@ -85,6 +107,7 @@ let g:cpp_member_variable_highlight= 1
 
 " ----- scrooloose/nerdtree -----
 " https://github.com/scrooloose/nerdtree
+nnoremap <silent> - :exe 'NERDTreeFocus'<CR>
 
 " The NERD tree allows to explore filesystem and to open files and directories
 
@@ -94,8 +117,8 @@ let g:cpp_member_variable_highlight= 1
 "autocmd VIMEnter * wincmd w
 
 " Auto open nerdtree if no file is edited when vim start up
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
 
 " Auto open nerdtree when vim starts up on opening a directory
 " This fucntion has been setted by vim-nerdtree-tabs
@@ -103,18 +126,28 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree |endif
 
 " Close vim if the only window left is NERDTree
 " This fucntion has been setted by vim-nerdtree-tabs
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set Tree Symbol
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Nerdtree ignore file type
-let NERDTreeIgnore = ['\.pyc$','__pycache__',' CVS',' .git','.DS_Store','\.swp$','\.swo$']
+" let NERDTreeIgnore = ['\.pyc$','__pycache__',' CVS',' .git','.DS_Store','\.swp$','\.swo$']
+" From HUYA
+let NERDTreeIgnore = ['\.pyc$','__pycache__',' CVS',' .git','.DS_Store','\.swp$','\.swo$','\.a$','\.tgz','\.so','\.o$','\.d']
+" End
 
 " Don't show hidden file in nerdtree
 let NERDTreeShowHidden = 0
 
+" From HUYA
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeHijackNetrw=1 "?
+let g:netrw_banner = 0 "?
+let g:netrw_liststyle = 3 "?
+" End
 
 
 " ----- Xuyuanp/nerdtree-git-plugin -----
@@ -123,18 +156,6 @@ let NERDTreeShowHidden = 0
 " A plugin of NERDTree showing git status flags.
 
 " Use this variable to change symbols
-let g:NERDTreeIndicatorMapCustom = {
-            \ "Modified"  : "✹",
-            \ "Staged"    : "✚",
-            \ "Untracked" : "✭",
-            \ "Renamed"   : "➜",
-            \ "Unmerged"  : "═",
-            \ "Deleted"   : "✖",
-            \ "Dirty"     : "✗",
-            \ "Clean"     : "✔︎",
-            \ 'Ignored'   : '☒',
-            \ "Unknown"   : "?"
-            \ }
 
 
 
@@ -144,7 +165,7 @@ let g:NERDTreeIndicatorMapCustom = {
 " NERDTree and tabs together in Vim, painlessly
 
 " Open/close NERDTree Tabs with F3
-map <F3> <plug>NERDTreeTabsToggle<CR>
+"map <F3> <plug>NERDTreeTabsToggle<CR>
 
 " Open NERDTree only if directory was given as startup argument
 let g:nerdtree_tabs_open_on_console_startup=2
@@ -198,15 +219,16 @@ let g:easytags_suppress_ctags_warning = 1
 " A plugin reads your tags file and displays the information in an accesible way inside vim
 
 " Open/close tagbar with F4
-nmap <F4> :TagbarToggle<CR>
+"nmap <F4> :TagbarToggle<CR>
+nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " Forbid open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
-" After Selection one tag and auto close tagbar
-let g:tagbar_autoclose=1
+" After Selection one tag and auto close tagbar:1
+let g:tagbar_autoclose=0
 
-" Window won't displace help message
+" Window won't displace help message:1
 let g:tagbar_compact = 1
 
 " Forbid auto focus when tarbar is open
@@ -258,7 +280,7 @@ let g:tagbar_width = 32
 " Switch between source files and header files quickly
 
 " F2 open .cpp or .h file in split window
-nnoremap <silent> <F2> :AV<CR>
+nnoremap <silent> _ :AV<CR>
 
 " Create file mapping
 let g:alternateExtensions_h = "c,cpp,cxx,cc"
@@ -340,8 +362,8 @@ let g:NERDSpaceDelims=1
 " A ack/ag powered code serach and view tool
 
 " Mapping
-nmap     <leader>ff <Plug>CtrlSFPrompt
-nmap     <leader>fn <Plug>CtrlSFCwordPath
+nnoremap <silent> <leader>ff <Plug>CtrlSFPrompt
+nnoremap <silent> <leader>fn <Plug>CtrlSFCwordPath
 
 " Define case-sensitivity in search
 let g:ctrlsf_case_sensitive = 'smart'
@@ -399,15 +421,15 @@ let g:ULtiSnipsUsePythonVersion = 2
 " Using git in Vim
 
 " Mapping
-"nnoremap <Leader>gs :Gstatus<CR>
-"nnoremap <Leader>gr :Gremove<CR>
-"nnoremap <Leader>gl :Glog<CR>
-"nnoremap <Leader>gb :Gblame<CR>
-"nnoremap <Leader>gm :Gmove
-"nnoremap <Leader>gp :Ggrep
-"nnoremap <Leader>gR :Gread<CR>
-"nnoremap <Leader>gg :Git
-"nnoremap <Leader>gd :Gdiff<CR>
+"nnoremap <silent> <Leader>gs :Gstatus<CR>
+"nnoremap <silent> <Leader>gr :Gremove<CR>
+"nnoremap <silent> <Leader>gl :Glog<CR>
+"nnoremap <silent> <Leader>gb :Gblame<CR>
+"nnoremap <silent> <Leader>gm :Gmove
+"nnoremap <silent> <Leader>gp :Ggrep
+"nnoremap <silent> <Leader>gR :Gread<CR>
+"nnoremap <silent> <Leader>gg :Git
+"nnoremap <silent> <Leader>gd :Gdiff<CR>
 
 
 
@@ -432,22 +454,31 @@ let g:gitgutter_max_signs = 1000
 " https://github.com/jlanzarotta/bufexplorer
 
 " bufexplorer can quickly and easily switch between buffers
+"
+" 打开最近打开的文件
+nnoremap <silent> \ :ToggleBufExplorer<CR>
+
+"nnoremap <silent> <F6> :BufExplorer<CR>
+"nnoremap <silent> <s-F6> :ToggleBufExplorer<CR>
+"nnoremap <silent> <m-F6> :BufExplorerHorizontalSplit<CR>
+"nnoremap <silent> <c-F6> :BufExplorerVerticalSplit<CR>
 
 "<leader>be: normal open
 "<leader>bt: toggle open/close
 "<leader>bs: force horizontal split
 "<leader>bv: force vertical split
+"
+au BufNewFile,BufRead *.cpp set syntax=cppxx
 
-nnoremap <silent> <F6> :BufExplorer<CR>
-nnoremap <silent> <s-F6> :ToggleBufExplorer<CR>
-nnoremap <silent> <m-F6> :BufExplorerHorizontalSplit<CR>
-nnoremap <silent> <c-F6> :BufExplorerVerticalSplit<CR>
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " Show absolute paths.
 let g:bufExplorerShowRelativePath=0
 
 " Show detailed help.
-let g:bufExplorerDetailedHelp=1
+let g:bufExplorerDetailedHelp=0
 
 " Split left.
 let g:bufExplorerSplitRight=0
@@ -470,7 +501,7 @@ let g:bufExplorerSortBy='mru'
 "provide easy code formatting in vim
 
 " Set F7 to autoformat
-nnoremap <silent> <F7> :Autoformat<CR>
+nnoremap <silent> <leader>u :Autoformat<CR>
 
 " Autoformat when saving a file
 "autocmd BufWrite * :Autoformat
@@ -504,39 +535,46 @@ let g:formatters_cpp = ['my_custom_cpp']
 
 " A code-completion engine for Vim
 
+" Mappping
+nnoremap <silent> <Leader>yg  :YcmCompleter GoToImprecise<CR>
+nnoremap <silent> <Leader>yh  :YcmCompleter GoToInclude<CR>
+nnoremap <silent> <Leader>yt  :YcmCompleter GetType<CR>
+nnoremap <silent> <Leader>yq  :YcmDiags<CR>
+
 " Set error and waring symbol
 let g:ycm_error_symbol='✘'
 let g:ycm_warning_symbol='▲'
 
 " Set python interpreter edition
-let g:ycm_path_to_python_interpreter='python'
-
-" Mappping
-nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>df :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>dg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_path_to_python_interpreter='/usr/local/bin/python3.7'
+let g:ycm_server_python_interpreter='/usr/local/bin/python3.7'
 
 " Set the configure file path
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " Turn off confirm
 let g:ycm_confirm_extra_conf=0
 
+" Turn off windows after insertion
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+" Ctrl+Z: open completion menu
+let g:ycm_key_invoke_completion='<C-z>'
+
 " Enable tags from file
 let g:ycm_collect_identifiers_from_tags_files = 1
 
-" Disable identifiers from comments or strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" Enable identifiers from comments or strings
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " When the autocomplete works
-let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_min_num_of_chars_for_completion= 2
 
 " Disable omnifunc
 let g:ycm_cache_omnifunc=0
 
 " Enable seed identifiers with syntax
-let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
 
 " Enable complete in comments
 let g:ycm_complete_in_comments=1
@@ -552,20 +590,29 @@ let g:ycm_filetype_blacklist = {
             \ 'tagbar' : 1,
             \ 'nerdtree' : 1,
             \}
+"  设置在这些语言下，只要输入两个字符就会触发自动补全
+let g:ycm_semantic_triggers =  {
+            \'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \'cs,lua,javascript': ['re!\w{2}'], }
 
-"Mappping
-let g:ycm_key_list_select_completion = ['<C-j>','<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>','<Up>']
+" Mappping
+"let g:ycm_key_list_select_completion = ['<C-j>','<Down>']
+"let g:ycm_key_list_previous_completion = ['<C-k>','<Up>']
 
-
+" 关闭展示函数原型功能
 "set completeopt-=preview
-set completeopt =longest,menu
+"set completeopt =longest,menu
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
 
 " Menu color
 "highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+"highlight Pmenu guibg=blue  guifg=gray
 
 " Collected item color
 "highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+"highlight PmenuSel ctermfg=1 ctermbg=3 guibg=yellow guifg=red
+"highlight PmenuSel guibg=grey guifg=white
 
 
 
@@ -643,6 +690,61 @@ set completeopt =longest,menu
 
 "Turn off the folding
 "let g:vim_markdown_folding_disabled = 1
+
+
+
+" ----- skywind3000/asyncrun -----
+" https://github.com/skywind3000/asyncrun.vim
+
+" Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window
+
+" 自动打开quickfix window，高度为6
+let g:asyncrun_open=10
+
+" ;q 打开quickfix窗口
+nnoremap <silent> <Leader>q :call asyncrun#quickfix_toggle(25)<cr>
+nnoremap <silent> <C-n> :cnext<CR>
+nnoremap <silent> <C-p> :cprev<CR>
+
+" ;m 异步执行编译 make -j
+nnoremap <silent> <Leader>mm :AsyncRun make -j -S<cr>
+" ;t 异步执行打包 make -j tar
+nnoremap <silent> <Leader>mt :AsyncRun make -j -S tar<cr>
+
+" ;gg grep -n 当前词
+nnoremap <silent> <Leader>gg :AsyncRun! grep -n <cword> * <cr>
+nnoremap          <Leader>gh :AsyncRun! grep -n <c-r><c-w> *
+nnoremap <silent> <Leader>gr :AsyncRun! grep -nR <cword> . <cr>
+
+" ---- Yggdroot/LeaderF ----
+" https://github.com/Yggdroot/LeaderF
+
+" An asynchronous fuzzy finder which is used to quickly locate files, buffers, mrus, tags, etc. in large project.
+
+" ;ff 浏览/搜索函数
+nnoremap <silent> <Leader>ff :LeaderfFunction<cr>
+" ;fd 浏览/搜索文件
+nnoremap <silent> <Leader>fd :LeaderfFile<cr>
+" ;fg 浏览/搜索文件
+nnoremap <silent> <Leader>fh :LeaderfLine<cr>
+nnoremap <silent> <Leader>fm :LeaderfMru<cr>
+nnoremap <silent> <Leader>fa :LeaderfSelf<cr>
+
+
+" ---- junegunn/fzf.vim ----
+" https://github.com/junegunn/fzf.vim
+
+" fzf for vim
+"
+" ;z fzf查找
+nnoremap <silent> <Leader>z  :FZF<cr>
+
+
+
+" ---- tpope/vim-fireplace ----
+" https://github.com/tpope/vim-fireplace
+
+" fireplace.vim: Clojure REPL suppor
 
 
 
