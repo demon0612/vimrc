@@ -165,7 +165,7 @@ endtry
 " Specify the behavior when switching between buffers
 try
     set switchbuf=useopen,usetab,newtab
-    set showtabline=2
+    set showtabline=0
     "set tabline = %M\ %t
 catch
 endtry

@@ -35,7 +35,7 @@ endif
 " End
 
 " Show airline for different tabs
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " Disable Show airline for different buffers
 let g:airline#extensions#tabline#buffer_nr_show = 0
@@ -546,11 +546,12 @@ let g:ycm_error_symbol='✘'
 let g:ycm_warning_symbol='▲'
 
 " Set python interpreter edition
-let g:ycm_path_to_python_interpreter='/usr/local/bin/python3.7'
-let g:ycm_server_python_interpreter='/usr/local/bin/python3.7'
+" let g:ycm_path_to_python_interpreter='/usr/local/bin/python3.2'
+" let g:ycm_server_python_interpreter='/usr/local/bin/python3.2'
 
 " Set the configure file path
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/root/GitHub/GitLab/vimfiles/ycm_extra_conf.py'
 
 " Turn off confirm
 let g:ycm_confirm_extra_conf=0
