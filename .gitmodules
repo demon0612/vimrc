@@ -82,3 +82,16 @@
 [submodule "bundle/YouCompleteMe"]
     path = bundle/YouCompleteMe
     url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/LeaderF"]
+    path = bundle/LeaderF
+    url = https://github.com/Yggdroot/LeaderF
+[submodule "bundle/fzf"]
+    path = bundle/fzf
+    url = https://github.com/junegunn/fzf
+[submodule "bundle/asyncrun.vim"]
+    path = bundle/asyncrun.vim
+    url = https://github.com/skywind3000/asyncrun.vim
+
+
+
+
