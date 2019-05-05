@@ -38,7 +38,7 @@ endif
 set ruler
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -143,8 +143,8 @@ set copyindent
 " Abandon to split word with special character
 set iskeyword+=_,$,@,%,#,-
 
-" Set foldmethod manula/indent/syntax   za zR zM
-set foldmethod=syntax
+" Set foldmethod manual/indent/syntax   za zR zM
+set foldmethod=indent
 
 " Close all fold when startup
 set nofoldenable
@@ -165,7 +165,7 @@ endtry
 " Specify the behavior when switching between buffers
 try
     set switchbuf=useopen,usetab,newtab
-    set showtabline=2
+    set showtabline=0
     "set tabline = %M\ %t
 catch
 endtry

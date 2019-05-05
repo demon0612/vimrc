@@ -35,7 +35,7 @@ endif
 " End
 
 " Show airline for different tabs
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " Disable Show airline for different buffers
 let g:airline#extensions#tabline#buffer_nr_show = 0
