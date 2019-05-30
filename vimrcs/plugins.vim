@@ -54,7 +54,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 "Plugin 'godlygeek/tabular'
 
-"Plugin 'Chiel92/vim-autoformat'
+Plugin 'Chiel92/vim-autoformat'
 
 Plugin 'Valloric/YouCompleteMe'
  

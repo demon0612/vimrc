@@ -504,14 +504,14 @@ let g:bufExplorerSortBy='mru'
 nnoremap <silent> <leader>u :Autoformat<CR>
 
 " Autoformat when saving a file
-"autocmd BufWrite * :Autoformat
+autocmd BufWrite * :Autoformat
 
 "Set personal format
-let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
-let g:formatters_c = ['my_custom_c']
-
-let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %"'
-let g:formatters_cpp = ['my_custom_cpp']
+"let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
+"let g:formatters_c = ['my_custom_c']
+ 
+"let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %"'
+"let g:formatters_cpp = ['my_custom_cpp']
 
 "let g:formatdef_my_custom_perl='"astyle --style=gnu --sufiix=none %"'
 "let g:formatters_perl = ['my_custom_perl']
