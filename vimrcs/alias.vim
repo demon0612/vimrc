@@ -18,7 +18,7 @@ nnoremap <silent> <C-h> <C-W>h
 nnoremap <silent> <C-l> <C-W>l
 
 " 光标在Vim窗口之间切换
-nnoremap <silent> = <C-W><C-W>
+"nnoremap <silent> = <C-W><C-W>
 
 " Useful mappings for managing tabs
 "map <leader>tn :tabnew <C-R>=expand("%:p:h")<CR>/

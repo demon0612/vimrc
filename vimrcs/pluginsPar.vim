@@ -30,7 +30,7 @@ endtry
 
 " From HUYA
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 " End
 
@@ -239,38 +239,38 @@ let g:tagbar_width = 32
 
 " Define how to create tags about cpp
 "let g:tagbar_type_cpp = {
-"\ 'ctagstype' : 'c++',
-"\ 'kinds'     : [
-"\ 'd:macros:1',
-"\ 'g:enums',
-"\ 't:typedefs:0:0',
-"\ 'e:enumerators:0:0',
-"\ 'n:namespaces',
-"\ 'c:classes',
-"\ 's:structs',
-"\ 'u:unions',
-"\ 'f:functions',
-"\ 'm:members:0:0',
-"\ 'v:global:0:0',
-"\ 'x:external:0:0',
-"\ 'l:local:0:0'
-"\ ],
-"\ 'sro'        : '::',
-"\ 'kind2scope' : {
-"\ 'g' : 'enum',
-"\ 'n' : 'namespace',
-"\ 'c' : 'class',
-"\ 's' : 'struct',
-"\ 'u' : 'union'
-"\ },
-"\ 'scope2kind' : {
-"\ 'enum'      : 'g',
-"\ 'namespace' : 'n',
-"\ 'class'     : 'c',
-"\ 'struct'    : 's',
-"\ 'union'     : 'u'
-"\ }
-"\ }
+            "\ 'ctagstype' : 'c++',
+            "\ 'kinds'     : [
+            "\ 'd:macros:1',
+            "\ 'g:enums',
+            "\ 't:typedefs:0:0',
+            "\ 'e:enumerators:0:0',
+            "\ 'n:namespaces',
+            "\ 'c:classes',
+            "\ 's:structs',
+            "\ 'u:unions',
+            "\ 'f:functions',
+            "\ 'm:members:0:0',
+            "\ 'v:global:0:0',
+            "\ 'x:external:0:0',
+            "\ 'l:local:0:0'
+            "\ ],
+            "\ 'sro'        : '::',
+            "\ 'kind2scope' : {
+            "\ 'g' : 'enum',
+            "\ 'n' : 'namespace',
+            "\ 'c' : 'class',
+            "\ 's' : 'struct',
+            "\ 'u' : 'union'
+            "\ },
+            "\ 'scope2kind' : {
+            "\ 'enum'      : 'g',
+            "\ 'namespace' : 'n',
+            "\ 'class'     : 'c',
+            "\ 'struct'    : 's',
+            "\ 'union'     : 'u'
+            "\ }
+            "\ }
 
 
 
@@ -280,7 +280,7 @@ let g:tagbar_width = 32
 " Switch between source files and header files quickly
 
 " F2 open .cpp or .h file in split window
-nnoremap <silent> _ :AV<CR>
+nnoremap <silent> = :AV<CR>
 
 " Create file mapping
 let g:alternateExtensions_h = "c,cpp,cxx,cc"
@@ -471,7 +471,7 @@ nnoremap <silent> \ :ToggleBufExplorer<CR>
 au BufNewFile,BufRead *.cpp set syntax=cppxx
 
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 " Show absolute paths.
@@ -504,12 +504,12 @@ let g:bufExplorerSortBy='mru'
 nnoremap <silent> <leader>u :Autoformat<CR>
 
 " Autoformat when saving a file
-autocmd BufWrite * :Autoformat
+"autocmd BufWrite * :Autoformat
 
 "Set personal format
 "let g:formatdef_my_custom_c='"astyle --style=ansi -a --sufiix=none %"'
 "let g:formatters_c = ['my_custom_c']
- 
+
 "let g:formatdef_my_custom_cpp='"astyle --style=ansi --one-line=keep-statements -a --sufiix=none %"'
 "let g:formatters_cpp = ['my_custom_cpp']
 
@@ -538,7 +538,9 @@ autocmd BufWrite * :Autoformat
 " Mappping
 nnoremap <silent> <Leader>yg  :YcmCompleter GoToImprecise<CR>
 nnoremap <silent> <Leader>yh  :YcmCompleter GoToInclude<CR>
-nnoremap <silent> <Leader>yt  :YcmCompleter GetType<CR>
+nnoremap <silent> <Leader>yt  :YcmCompleter GetTypeImprecise<CR>
+nnoremap <silent> <Leader>yc  :YcmCompleter ClearCompilationFlagCache<CR>
+nnoremap <silent> <Leader>yf  :YcmCompleter FixIt<CR>
 nnoremap <silent> <Leader>yq  :YcmDiags<CR>
 
 " Set error and waring symbol
@@ -551,7 +553,7 @@ let g:ycm_warning_symbol='▲'
 
 " Set the configure file path
 " let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_global_ycm_extra_conf = '/root/GitHub/GitLab/vimfiles/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/usr/local/share/vim/conf/tools/ycm/ycm_extra_conf.py'
 
 " Turn off confirm
 let g:ycm_confirm_extra_conf=0
@@ -560,7 +562,7 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_autoclose_preview_window_after_insertion=1
 
 " Ctrl+Z: open completion menu
-let g:ycm_key_invoke_completion='<C-z>'
+"let g:ycm_key_invoke_completion='<C-z>'
 
 " Enable tags from file
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -572,10 +574,10 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_min_num_of_chars_for_completion= 2
 
 " Disable omnifunc
-let g:ycm_cache_omnifunc=0
+"let g:ycm_cache_omnifunc=0
 
 " Enable seed identifiers with syntax
-"let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " Enable complete in comments
 let g:ycm_complete_in_comments=1
@@ -584,7 +586,7 @@ let g:ycm_complete_in_comments=1
 let g:ycm_complete_in_strings=1
 
 " Enable complete from ultisnips
-let g:ycm_use_ultisnips_completer=1
+"let g:ycm_use_ultisnips_completer=1
 
 " Disable in the following file
 let g:ycm_filetype_blacklist = {
@@ -604,7 +606,7 @@ let g:ycm_semantic_triggers =  {
 "set completeopt-=preview
 "set completeopt =longest,menu
 set completeopt=menu,menuone
-let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_add_preview_to_completeopt = 1
 
 " Menu color
 "highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
@@ -707,10 +709,10 @@ nnoremap <silent> <Leader>q :call asyncrun#quickfix_toggle(25)<cr>
 nnoremap <silent> <C-n> :cnext<CR>
 nnoremap <silent> <C-p> :cprev<CR>
 
-" ;m 异步执行编译 make -j
-nnoremap <silent> <Leader>mm :AsyncRun make -j -S<cr>
-" ;t 异步执行打包 make -j tar
-nnoremap <silent> <Leader>mt :AsyncRun make -j -S tar<cr>
+" 异步执行编译 make
+nnoremap <silent> <Leader>mm :AsyncRun make -j -S;pwd<cr>
+nnoremap <silent> <Leader>mt :AsyncRun make -j -S tar;pwd<cr>
+nnoremap <silent> <Leader>mc :AsyncRun make cleanall;pwd<cr>
 
 " ;gg grep -n 当前词
 nnoremap <silent> <Leader>gg :AsyncRun! grep -n <cword> * <cr>

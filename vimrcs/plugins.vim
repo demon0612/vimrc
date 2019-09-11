@@ -46,9 +46,9 @@ Plugin 'vim-scripts/a.vim'
 
 "Plugin 'SirVer/ultisnips'
 
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-"Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'jlanzarotta/bufexplorer'
 
