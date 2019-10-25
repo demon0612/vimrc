@@ -143,8 +143,8 @@ set copyindent
 " Abandon to split word with special character
 set iskeyword+=_,$,@,%,#,-
 
-" Set foldmethod manula/indent/syntax   za zR zM
-set foldmethod=syntax
+" Set foldmethod manual/indent/syntax   za zR zM
+set foldmethod=indent
 
 " Close all fold when startup
 set nofoldenable
