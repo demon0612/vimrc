@@ -74,6 +74,8 @@ Plugin 'junegunn/fzf'
 
 "Plugin 'tpope/vim-fireplace'
 
+Plugin 'rdnetto/YCM-Generator'
+
 call vundle#end()
 
 filetype plugin indent on
