@@ -89,7 +89,7 @@ set nowritebackup
 set noswapfile
 
 " Use spaces instead of tabs
-set expandtab
+" set expandtab
 
 " Be smart when using tabs
 set smarttab

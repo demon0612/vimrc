@@ -149,6 +149,9 @@ let g:netrw_banner = 0 "?
 let g:netrw_liststyle = 3 "?
 " End
 
+" test
+let g:NERDTreeWinSize=40
+
 
 " ----- Xuyuanp/nerdtree-git-plugin -----
 " https://github.com/Xuyuanp/nerdtree-git-plugin
@@ -713,6 +716,8 @@ nnoremap <silent> <C-p> :cprev<CR>
 nnoremap <silent> <Leader>mm :AsyncRun make -j -S;pwd<cr>
 nnoremap <silent> <Leader>mt :AsyncRun make -j -S tar;pwd<cr>
 nnoremap <silent> <Leader>mc :AsyncRun make cleanall;pwd<cr>
+nnoremap <silent> <Leader>mn :AsyncRun ~/.vim/script/make_by_serverless.sh %:p; pwd<cr>
+nnoremap <silent> <Leader>mp :AsyncStop<cr>
 
 " ;gg grep -n 当前词
 nnoremap <silent> <Leader>gg :AsyncRun! grep -n <cword> * <cr>
