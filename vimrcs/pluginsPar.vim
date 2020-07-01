@@ -149,6 +149,9 @@ let g:netrw_banner = 0 "?
 let g:netrw_liststyle = 3 "?
 " End
 
+" test
+let g:NERDTreeWinSize=40
+
 
 " ----- Xuyuanp/nerdtree-git-plugin -----
 " https://github.com/Xuyuanp/nerdtree-git-plugin
@@ -443,7 +446,7 @@ let g:gitgutter_map_keys = 0
 
 " Always show the sign
 "let g:gitgutter_sign_column_always = 1
-set signcolumn=yes
+"set signcolumn=yes
 
 " Set the max signs
 let g:gitgutter_max_signs = 1000
@@ -710,9 +713,11 @@ nnoremap <silent> <C-n> :cnext<CR>
 nnoremap <silent> <C-p> :cprev<CR>
 
 " 异步执行编译 make
-nnoremap <silent> <Leader>mm :AsyncRun make -j -S;pwd<cr>
-nnoremap <silent> <Leader>mt :AsyncRun make -j -S tar;pwd<cr>
-nnoremap <silent> <Leader>mc :AsyncRun make cleanall;pwd<cr>
+nnoremap <silent> <Leader>mm :AsyncRun rm .*.d; make -j -S;pwd<cr>
+nnoremap <silent> <Leader>mt :AsyncRun rm .*.d; make -j -S tar;pwd<cr>
+nnoremap <silent> <Leader>mc :AsyncRun rm .*.d; make cleanall;pwd<cr>
+nnoremap <silent> <Leader>mn :AsyncRun ~/.vim/script/make_by_serverless.sh %:p; pwd<cr>
+nnoremap <silent> <Leader>mp :AsyncStop<cr>
 
 " ;gg grep -n 当前词
 nnoremap <silent> <Leader>gg :AsyncRun! grep -n <cword> * <cr>
