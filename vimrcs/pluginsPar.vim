@@ -15,6 +15,7 @@ set background=dark
 
 " Set color scheme
 try
+	set t_Co=256
     colorscheme gruvbox
     "colorscheme molokai
     "colorscheme solarized
@@ -471,7 +472,7 @@ nnoremap <silent> \ :ToggleBufExplorer<CR>
 "<leader>bs: force horizontal split
 "<leader>bv: force vertical split
 "
-au BufNewFile,BufRead *.cpp set syntax=cppxx
+"au BufNewFile,BufRead *.cpp set syntax=cpp
 
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -555,8 +556,8 @@ let g:ycm_warning_symbol='▲'
 " let g:ycm_server_python_interpreter='/usr/local/bin/python3.2'
 
 " Set the configure file path
-" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-let g:ycm_global_ycm_extra_conf = '/usr/local/share/vim/conf/tools/ycm/ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '/usr/local/share/vim/conf/tools/ycm/ycm_extra_conf.py'
 
 " Turn off confirm
 let g:ycm_confirm_extra_conf=0
