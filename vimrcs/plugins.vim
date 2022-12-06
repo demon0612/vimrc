@@ -56,7 +56,7 @@ Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'Chiel92/vim-autoformat'
 
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
  
 "Plugin '/usr/local/share/vim/conf/plugged/YouCompleteMe'
 
